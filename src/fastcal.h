@@ -47,8 +47,9 @@
      *  \section libfastcal
      *  \section _ Fast calibration data access
      *
-     *  The libfastcal is designed to access camera calibration data values in the fastest 
-     *  possible way. This library is a temporary development for research and safety purpose.
+     *  The libfastcal is designed to access FOXEL camera calibration data values in the
+     *  fastest and safest way. This library is mainly used for research purpose and will
+     *  probably not leave alpha 0.1 state.
      *
      *  \section Copyright
      * 
@@ -93,10 +94,14 @@
     Header - Preprocessor definitions
  */
 
-    /* Define mathematical constants */
-    # define LF_PI      lf_Real_s( 3.14159265358979323846264338327950 )
-    # define LF_PI2     lf_Real_s( 6.28318530717958647692528676655901 )
-    # define LF_DEG2RAD ( LF_PI / lf_Real_s( 180.0 ) )
+    /* Define fundamental constants */
+    # define LF_PI              lf_Real_s( 3.14159265358979323846264338327950 )
+
+    /* Define secondary constants */
+    # define LF_PI2             ( lf_Real_s( 2.0 ) * LF_PI )
+
+    /* Define conversion constants */
+    # define LF_DEG2RAD         ( LF_PI / lf_Real_s( 180.0 ) )
 
 /*
     Header - Preprocessor macros
@@ -123,10 +128,10 @@
  */
 
     /* Define floating point type */
-    typedef long double lf_Real_t;
+    typedef double   lf_Real_t;
 
     /* Define generic index type */
-    typedef signed long int lf_Size_t;
+    typedef long int lf_Size_t;
 
 /*
     Header - Structures

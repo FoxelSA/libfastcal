@@ -39,7 +39,7 @@
     /*! \file   fastcal-query.h
      *  \author Nils Hamel <n.hamel@foxel.ch>
      *
-     *  Calibration data server
+     *  Principal calibration data server
      */
 
 /*
@@ -84,15 +84,17 @@
     Header - Function prototypes
  */
 
-    /*! \brief Library main query function
-     *  
-     *  This function is called to obtained calibration data value. It
-     *  expects the device tag, the desired data tag and the sensor channel
-     *  on which data query is made.
+    /*! \brief Principal calibration data server
+     *
+     *  This function gives access to calibration data about sensors of
+     *  any implemented camera. The camera is pointed using a predefined
+     *  tag given as parameter. The calibration data is obtained giving
+     *  the predefined tag. The sensor specified using its index.
      *  
      *  \param lfDevice Device tag
      *  \param lfData Calibration data tag
      *  \param lfChannel Camera sensor channel number
+     *  \return Returns calibration data value
      */
 
     lf_Real_t lf_query( const char const * lfDevice, const char const * lfData, lf_Size_t lfChannel );

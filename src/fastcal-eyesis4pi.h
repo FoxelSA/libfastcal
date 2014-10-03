@@ -62,18 +62,19 @@
  */
 
     # include "fastcal.h"
+    # include "fastcal-eyesis4pi-data.h"
 
 /*
     Header - Preprocessor definitions
  */
 
-    /* Eyesis4pi devices */
-    # define LF_EYESIS4PI_DEVICE_1      "eyesis4pi-1"
-    # define LF_EYESIS4PI_DEVICE_2      "eyesis4pi-2"
+    /* Eyesis4pi devices index */
+    # define LF_EYESIS4PI_1             "eyesis4pi-1"
+    # define LF_EYESIS4PI_2             "eyesis4pi-2"
 
     /* Calibration data string tags */
     # define LF_EYESIS4PI_FOCAL         "focal-length"
-    # define LF_EYESIS4PI_AZIMUTH       "azimut"
+    # define LF_EYESIS4PI_AZIMUTH       "azimuth"
     # define LF_EYESIS4PI_ELEVATION     "elevation"
     # define LF_EYESIS4PI_HEADING       "heading"
     # define LF_EYESIS4PI_PIXELSIZE     "pixel-size"
@@ -105,16 +106,16 @@
 
     /*! \brief Eyesis4pi-specific calibration data server
      *  
-     *  This function provides calibration data value of the
-     *  sensor channel of an eyesis4pi device.
+     *  This function returns calibration data value of the desired
+     *  sensor of the pointed eyesis4pi device.
      *  
-     *  \param lfEyesis4pi Device tag
-     *  \param lfIndex Device index (to differentiate device of the same model)
+     *  \param lfIndex Predefined index of eyesis4pi device
      *  \param lfData Calibration data tag
      *  \param lfChannel Camera sensor channel number
+     *  \return Returns calibration data value
      */
 
-    lf_Real_t lf_eyesis4pi( const char const * lfEyesis4pi, lf_Size_t lfIndex, const char const * lfData, lf_Size_t lfChannel );
+    lf_Real_t lf_eyesis4pi( lf_Size_t lfIndex, const char const * lfData, lf_Size_t lfChannel );
 
 /*
     Header - C/C++ compatibility

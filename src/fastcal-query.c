@@ -44,21 +44,23 @@
     # include "fastcal-query.h"
 
 /*
-    Source - Principal query interface
+    Source - Principal calibration data server
  */
 
     lf_Real_t lf_query( const char const * lfDevice, const char const * lfData, lf_Size_t lfChannel ) {
 
-        /* Switch on camera device */
-        if ( strcmp( lfDevice, LF_EYESIS4PI_DEVICE_1 ) == 0 ) {
+        /* Eyesis4pi number 1 */
+        if ( strcmp( lfDevice, LF_EYESIS4PI_1 ) == 0 ) {
 
             /* Call device-specific calibration access */
-            return( lf_eyesis4pi( lfDevice, 0, lfData, lfChannel ) );
+            return( lf_eyesis4pi( 0, lfData, lfChannel ) );
 
-        } else if ( strcmp( lfDevice, LF_EYESIS4PI_DEVICE_2 ) == 0 ) {
+        /* Eyesis4pi number 2 */
+        } else 
+        if ( strcmp( lfDevice, LF_EYESIS4PI_2 ) == 0 ) {
 
             /* Call device-specific calibration access */
-            return( lf_eyesis4pi( lfDevice, 1, lfData, lfChannel ) );
+            return( lf_eyesis4pi( 1, lfData, lfChannel ) );
 
         }
 

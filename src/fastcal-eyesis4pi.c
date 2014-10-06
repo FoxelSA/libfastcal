@@ -47,7 +47,7 @@
     Source - Eyesis4pi-specific calibration data server
  */
 
-    lf_Real_t lf_eyesis4pi( lf_Size_t lfIndex, const char const * lfData, lf_Size_t lfChannel ) {
+    lf_Real_t lf_eyesis4pi( const lf_Size_t lfIndex, const char const * lfData, const lf_Size_t lfChannel ) {
 
         /* Calibration data variables - Focal length */
         static const lf_Real_t lfCalibFocal[2][26]       = LF_FASTCAL_EYESIS4PI_DATA_FOCAL;
@@ -92,84 +92,84 @@
         static const lf_Real_t lfCalibSensorHeight[2][26] = LF_FASTCAL_EYESIS4PI_DATA_SENHEIGHT;
 
         /* Switch on calibration value */
-        if ( strcmp( lfData, LF_EYESIS4PI_FOCAL ) == 0 ) {
+        if ( strcasecmp( lfData, LF_EYESIS4PI_FOCAL ) == 0 ) {
 
             /* Return calibration data */
             return( lfCalibFocal[lfIndex][lfChannel] );
 
         } else 
-        if ( strcmp( lfData, LF_EYESIS4PI_AZIMUTH ) == 0 ) {
+        if ( strcasecmp( lfData, LF_EYESIS4PI_AZIMUTH ) == 0 ) {
 
             /* Return calibration data */
             return( lfCalibAzimuth[lfIndex][lfChannel] * LF_DEG2RAD );
 
         } else
-        if ( strcmp( lfData, LF_EYESIS4PI_ELEVATION ) == 0 ) {
+        if ( strcasecmp( lfData, LF_EYESIS4PI_ELEVATION ) == 0 ) {
 
             /* Return calibration data */
             return( lfCalibElevation[lfIndex][lfChannel] * LF_DEG2RAD );
 
         } else
-        if ( strcmp( lfData, LF_EYESIS4PI_HEADING ) == 0 ) {
+        if ( strcasecmp( lfData, LF_EYESIS4PI_HEADING ) == 0 ) {
 
             /* Return calibration data */
             return( lfCalibHeading[lfIndex][lfChannel] * LF_DEG2RAD );
 
         } else
-        if ( strcmp( lfData, LF_EYESIS4PI_PIXELSIZE ) == 0 ) {
+        if ( strcasecmp( lfData, LF_EYESIS4PI_PIXELSIZE ) == 0 ) {
 
             /* Return calibration data */
             return( lfCalibPixelSize[lfIndex][lfChannel] * lf_Real_s( 0.001 ) );
 
         } else
-        if ( strcmp( lfData, LF_EYESIS4PI_PX0 ) == 0 ) {
+        if ( strcasecmp( lfData, LF_EYESIS4PI_PX0 ) == 0 ) {
 
             /* Return calibration data */
             return( lfCalibPx0[lfIndex][lfChannel] );
 
-        } else if ( strcmp( lfData, LF_EYESIS4PI_PY0 ) == 0 ) {
+        } else if ( strcasecmp( lfData, LF_EYESIS4PI_PY0 ) == 0 ) {
 
             /* Return calibration data */
             return( lfCalibPy0[lfIndex][lfChannel] );
 
         } else
-        if ( strcmp( lfData, LF_EYESIS4PI_ROLL ) == 0 ) {
+        if ( strcasecmp( lfData, LF_EYESIS4PI_ROLL ) == 0 ) {
 
             /* Return calibration data */
             return( lfCalibRoll[lfIndex][lfChannel] * LF_DEG2RAD );
 
         } else
-        if ( strcmp( lfData, LF_EYESIS4PI_PANWIDTH ) == 0 ) {
+        if ( strcasecmp( lfData, LF_EYESIS4PI_PANWIDTH ) == 0 ) {
 
             /* Return calibration data */
             return( lfCalibPanWidth[lfIndex][lfChannel] );
 
         } else
-        if ( strcmp( lfData, LF_EYESIS4PI_PANHEIGHT ) == 0 ) {
+        if ( strcasecmp( lfData, LF_EYESIS4PI_PANHEIGHT ) == 0 ) {
 
             /* Return calibration data */
             return( lfCalibPanHeight[lfIndex][lfChannel] );
 
         } else
-        if ( strcmp( lfData, LF_EYESIS4PI_XPOSITION ) == 0 ) {
+        if ( strcasecmp( lfData, LF_EYESIS4PI_XPOSITION ) == 0 ) {
 
             /* Return calibration data */
             return( lfCalibXPosition[lfIndex][lfChannel] );
 
         } else
-        if ( strcmp( lfData, LF_EYESIS4PI_YPOSITION ) == 0 ) {
+        if ( strcasecmp( lfData, LF_EYESIS4PI_YPOSITION ) == 0 ) {
 
             /* Return calibration data */
             return( lfCalibYPosition[lfIndex][lfChannel] );
 
         } else
-        if ( strcmp( lfData, LF_EYESIS4PI_SENWIDTH ) == 0 ) {
+        if ( strcasecmp( lfData, LF_EYESIS4PI_SENWIDTH ) == 0 ) {
 
             /* Return calibration data */
             return( lfCalibSensorWidth[lfIndex][lfChannel] );
 
         } else
-        if ( strcmp( lfData, LF_EYESIS4PI_SENHEIGHT ) == 0 ) {
+        if ( strcasecmp( lfData, LF_EYESIS4PI_SENHEIGHT ) == 0 ) {
 
             /* Return calibration data */
             return( lfCalibSensorHeight[lfIndex][lfChannel] );

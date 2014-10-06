@@ -69,8 +69,8 @@
  */
 
     /* Eyesis4pi devices index */
-    # define LF_EYESIS4PI_1             "eyesis4pi-1"
-    # define LF_EYESIS4PI_2             "eyesis4pi-2"
+    # define LF_EYESIS4PI_1             "00:0E:64:08:1B:6E" /* Eyesis4Pi-1 */
+    # define LF_EYESIS4PI_2             "00:0E:64:08:1C:D2" /* Eyesis4Pi-2 */
 
     /* Calibration data string tags */
     # define LF_EYESIS4PI_FOCAL         "focal-length"
@@ -115,7 +115,7 @@
      *  \return Returns calibration data value
      */
 
-    lf_Real_t lf_eyesis4pi( lf_Size_t lfIndex, const char const * lfData, lf_Size_t lfChannel );
+    lf_Real_t lf_eyesis4pi( const lf_Size_t lfIndex, const char const * lfData, const lf_Size_t lfChannel );
 
 /*
     Header - C/C++ compatibility

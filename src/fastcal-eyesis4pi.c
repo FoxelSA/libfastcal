@@ -50,46 +50,55 @@
     lf_Real_t lf_eyesis4pi( const lf_Size_t lfIndex, const char const * lfData, const lf_Size_t lfChannel ) {
 
         /* Calibration data variables - Focal length */
-        static const lf_Real_t lfCalibFocal[2][26]       = LF_FASTCAL_EYESIS4PI_DATA_FOCAL;
+        static const lf_Real_t lfCalibFocal[2][26]        = LF_FASTCAL_EYESIS4PI_DATA_FOCAL;
 
         /* Calibration data variables - Azimuth */
-        static const lf_Real_t lfCalibAzimuth[2][26]     = LF_FASTCAL_EYESIS4PI_DATA_AZIMUTH;
+        static const lf_Real_t lfCalibAzimuth[2][26]      = LF_FASTCAL_EYESIS4PI_DATA_AZIMUTH;
 
         /* Calibration data variables - Elevation */
-        static const lf_Real_t lfCalibElevation[2][26]   = LF_FASTCAL_EYESIS4PI_DATA_ELEVATION;
+        static const lf_Real_t lfCalibElevation[2][26]    = LF_FASTCAL_EYESIS4PI_DATA_ELEVATION;
 
         /* Calibration data variables - Heading */
-        static const lf_Real_t lfCalibHeading[2][26]     = LF_FASTCAL_EYESIS4PI_DATA_HEADING;
+        static const lf_Real_t lfCalibHeading[2][26]      = LF_FASTCAL_EYESIS4PI_DATA_HEADING;
 
         /* Calibration data variables - Pixel size */
-        static const lf_Real_t lfCalibPixelSize[2][26]   = LF_FASTCAL_EYESIS4PI_DATA_PIXELSIZE;
+        static const lf_Real_t lfCalibPixelSize[2][26]    = LF_FASTCAL_EYESIS4PI_DATA_PIXELSIZE;
 
         /* Calibration data variables - X-position of center on sensor */
-        static const lf_Real_t lfCalibPx0[2][26]         = LF_FASTCAL_EYESIS4PI_DATA_PX0;
+        static const lf_Real_t lfCalibPx0[2][26]          = LF_FASTCAL_EYESIS4PI_DATA_PX0;
 
         /* Calibration data variables - Y-position of center on sensor */
-         static const lf_Real_t lfCalibPy0[2][26]        = LF_FASTCAL_EYESIS4PI_DATA_PY0;
+         static const lf_Real_t lfCalibPy0[2][26]         = LF_FASTCAL_EYESIS4PI_DATA_PY0;
 
         /* Calibration data variables - Roll */
-        static const lf_Real_t lfCalibRoll[2][26]        = LF_FASTCAL_EYESIS4PI_DATA_ROLL;
+        static const lf_Real_t lfCalibRoll[2][26]         = LF_FASTCAL_EYESIS4PI_DATA_ROLL;
 
         /* Calibration data variables - Panorama width */
-        static const lf_Real_t lfCalibPanWidth[2][26]    = LF_FASTCAL_EYESIS4PI_DATA_PANWIDTH;
+        static const lf_Real_t lfCalibPanWidth[2][26]     = LF_FASTCAL_EYESIS4PI_DATA_PANWIDTH;
 
         /* Calibration data variables - Panorama height */
-        static const lf_Real_t lfCalibPanHeight[2][26]   = LF_FASTCAL_EYESIS4PI_DATA_PANHEIGHT;
+        static const lf_Real_t lfCalibPanHeight[2][26]    = LF_FASTCAL_EYESIS4PI_DATA_PANHEIGHT;
 
         /* Calibration data variables - Tile x-position in panorama */
-        static const lf_Real_t lfCalibXPosition[2][26]   = LF_FASTCAL_EYESIS4PI_DATA_XPOSITION;
+        static const lf_Real_t lfCalibXPosition[2][26]    = LF_FASTCAL_EYESIS4PI_DATA_XPOSITION;
 
         /* Calibration data variables - Tile y-position in panorama */
-        static const lf_Real_t lfCalibYPosition[2][26]   = LF_FASTCAL_EYESIS4PI_DATA_YPOSITION;
+        static const lf_Real_t lfCalibYPosition[2][26]    = LF_FASTCAL_EYESIS4PI_DATA_YPOSITION;
 
         /* Calibration data variables - Sensor width */
-        static const lf_Real_t lfCalibSensorWidth[2][26] = LF_FASTCAL_EYESIS4PI_DATA_SENWIDTH;
+        static const lf_Real_t lfCalibSensorWidth[2][26]  = LF_FASTCAL_EYESIS4PI_DATA_SENWIDTH;
 
         /* Calibration data variables - Sensor width */
         static const lf_Real_t lfCalibSensorHeight[2][26] = LF_FASTCAL_EYESIS4PI_DATA_SENHEIGHT;
+
+        /* Calibration data variables - Radius */
+        static const lf_Real_t lfCalibRadius[2][26]       = LF_FASTCAL_EYESIS4PI_DATA_RADIUS;
+
+        /* Calibration data variables - Height */
+        static const lf_Real_t lfCalibHeight[2][26]       = LF_FASTCAL_EYESIS4PI_DATA_HEIGHT;
+
+        /* Calibration data variables - Entrance pupil forward */
+        static const lf_Real_t lfCalibPupForward[2][26]   = LF_FASTCAL_EYESIS4PI_DATA_PUPFORWARD;
 
         /* Switch on calibration value */
         if ( strcasecmp( lfData, LF_EYESIS4PI_FOCAL ) == 0 ) {
@@ -173,6 +182,24 @@
 
             /* Return calibration data */
             return( lfCalibSensorHeight[lfIndex][lfChannel] );
+
+        } else
+        if ( strcasecmp( lfData, LF_EYESIS4PI_RADIUS ) == 0 ) {
+
+            /* Return calibration data */
+            return( lfCalibRadius[lfIndex][lfChannel] );
+
+        } else
+        if ( strcasecmp( lfData, LF_EYESIS4PI_HEIGHT ) == 0 ) {
+
+            /* Return calibration data */
+            return( lfCalibHeight[lfIndex][lfChannel] );
+
+        } else
+        if ( strcasecmp( lfData, LF_EYESIS4PI_PUPFORWARD ) == 0 ) {
+
+            /* Return calibration data */
+            return( lfCalibPupForward[lfIndex][lfChannel] );
 
         }
 

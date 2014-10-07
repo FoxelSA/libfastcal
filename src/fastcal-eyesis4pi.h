@@ -87,6 +87,9 @@
     # define LF_EYESIS4PI_YPOSITION     "y-position"
     # define LF_EYESIS4PI_SENWIDTH      "sensor-width"
     # define LF_EYESIS4PI_SENHEIGHT     "sensor-height"
+    # define LF_EYESIS4PI_RADIUS        "radius"
+    # define LF_EYESIS4PI_HEIGHT        "height"
+    # define LF_EYESIS4PI_PUPFORWARD    "entrance-pupil-forward"
 
 /*
     Header - Preprocessor macros

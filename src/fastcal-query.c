@@ -47,20 +47,20 @@
     Source - Principal calibration data server
  */
 
-    lf_Real_t lf_query( const char const * lfDevice, const char const * lfData, const lf_Size_t lfChannel ) {
+    lf_Real_t lf_query_sensor( const char const * lfDevice, const lf_Size_t lfData, const lf_Size_t lfChannel ) {
 
         /* Eyesis4pi number 1 */
         if ( strcasecmp( lfDevice, LF_EYESIS4PI_1 ) == 0 ) {
 
             /* Call device-specific calibration access */
-            return( lf_eyesis4pi( 0, lfData, lfChannel ) );
+            return( lf_eyesis4pi_sensor( 0, lfData, lfChannel ) );
 
         /* Eyesis4pi number 2 */
         } else 
         if ( strcasecmp( lfDevice, LF_EYESIS4PI_2 ) == 0 ) {
 
             /* Call device-specific calibration access */
-            return( lf_eyesis4pi( 1, lfData, lfChannel ) );
+            return( lf_eyesis4pi_sensor( 1, lfData, lfChannel ) );
 
         }
 

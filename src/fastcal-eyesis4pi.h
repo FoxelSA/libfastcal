@@ -62,7 +62,6 @@
  */
 
     # include "fastcal.h"
-    # include "fastcal-eyesis4pi-data.h"
 
 /*
     Header - Preprocessor definitions
@@ -73,23 +72,23 @@
     # define LF_EYESIS4PI_2             "00:0E:64:08:1C:D2" /* Eyesis4Pi-2 */
 
     /* Calibration data string tags */
-    # define LF_EYESIS4PI_FOCAL         "focal-length"
-    # define LF_EYESIS4PI_AZIMUTH       "azimuth"
-    # define LF_EYESIS4PI_ELEVATION     "elevation"
-    # define LF_EYESIS4PI_HEADING       "heading"
-    # define LF_EYESIS4PI_PIXELSIZE     "pixel-size"
-    # define LF_EYESIS4PI_PX0           "px0"
-    # define LF_EYESIS4PI_PY0           "py0"
-    # define LF_EYESIS4PI_ROLL          "roll"
-    # define LF_EYESIS4PI_PANWIDTH      "panorama-width"
-    # define LF_EYESIS4PI_PANHEIGHT     "panorama-height"
-    # define LF_EYESIS4PI_XPOSITION     "x-position"
-    # define LF_EYESIS4PI_YPOSITION     "y-position"
-    # define LF_EYESIS4PI_SENWIDTH      "sensor-width"
-    # define LF_EYESIS4PI_SENHEIGHT     "sensor-height"
-    # define LF_EYESIS4PI_RADIUS        "radius"
-    # define LF_EYESIS4PI_HEIGHT        "height"
-    # define LF_EYESIS4PI_PUPFORWARD    "entrance-pupil-forward"
+    # define LF_EYESIS4PI_FOCAL         lf_Size_s(  1 ) /* Focal length */
+    # define LF_EYESIS4PI_AZIMUTH       lf_Size_s(  2 ) /* Azimuth */
+    # define LF_EYESIS4PI_ELEVATION     lf_Size_s(  3 ) /* Elevation */
+    # define LF_EYESIS4PI_HEADING       lf_Size_s(  4 ) /* Heading */
+    # define LF_EYESIS4PI_PIXELSIZE     lf_Size_s(  5 ) /* Pixel size */
+    # define LF_EYESIS4PI_PX0           lf_Size_s(  6 ) /* Px0 */
+    # define LF_EYESIS4PI_PY0           lf_Size_s(  7 ) /* Py0 */
+    # define LF_EYESIS4PI_ROLL          lf_Size_s(  8 ) /* Roll */
+    # define LF_EYESIS4PI_PANWIDTH      lf_Size_s(  9 ) /* Panorama width */
+    # define LF_EYESIS4PI_PANHEIGHT     lf_Size_s( 10 ) /* Panorama height */
+    # define LF_EYESIS4PI_XPOSITION     lf_Size_s( 11 ) /* X-position */
+    # define LF_EYESIS4PI_YPOSITION     lf_Size_s( 12 ) /* Y-position */
+    # define LF_EYESIS4PI_SENWIDTH      lf_Size_s( 13 ) /* Sensor width */
+    # define LF_EYESIS4PI_SENHEIGHT     lf_Size_s( 14 ) /* Sensor height */
+    # define LF_EYESIS4PI_RADIUS        lf_Size_s( 15 ) /* Radius */
+    # define LF_EYESIS4PI_HEIGHT        lf_Size_s( 16 ) /* Height */
+    # define LF_EYESIS4PI_PUPFORWARD    lf_Size_s( 17 ) /* Entrance pupil forward */
 
 /*
     Header - Preprocessor macros
@@ -118,7 +117,7 @@
      *  \return Returns calibration data value
      */
 
-    lf_Real_t lf_eyesis4pi( const lf_Size_t lfIndex, const char const * lfData, const lf_Size_t lfChannel );
+    lf_Real_t lf_eyesis4pi_sensor( const lf_Size_t lfIndex, const lf_Size_t lfData, const lf_Size_t lfChannel );
 
 /*
     Header - C/C++ compatibility

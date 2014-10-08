@@ -97,7 +97,7 @@
      *  \return Returns calibration data value
      */
 
-    lf_Real_t lf_query( const char const * lfDevice, const char const * lfData, const lf_Size_t lfChannel );
+    lf_Real_t lf_query_sensor( const char const * lfDevice, const lf_Size_t lfData, const lf_Size_t lfChannel );
 
 /*
     Header - C/C++ compatibility

@@ -50,13 +50,13 @@
     # include "fastcal-eyesis4pi-data.h"
 
 /*
-    Source - Eyesis4pi-specific calibration data server
+    Source - Eyesis4pi-specific calibration data server - Sensor
  */
 
     lf_Real_t lf_eyesis4pi_sensor( lf_Size_t const lfIndex, lf_Size_t const lfData, lf_Size_t const lfChannel, lf_Size_t * const lfStatus ) {
 
         /* Initialize status */
-        * lfStatus = LF_SUCCESS;
+        if ( lfStatus != NULL ) * lfStatus = LF_SUCCESS;
 
         /* Switch on calibration value */
         if ( lfData == LF_EYESIS4PI_FOCAL ) {
@@ -86,7 +86,7 @@
         if ( lfData == LF_EYESIS4PI_PIXELSIZE ) {
 
             /* Return calibration data */
-            return( lfCalibPixelSize[lfIndex][lfChannel] * lf_Real_s( 0.001 ) );
+            return( lfCalibPixelSize[lfIndex][lfChannel] * lf_Real_s( 0.000001 ) );
 
         } else
         if ( lfData == LF_EYESIS4PI_PX0 ) {
@@ -163,7 +163,7 @@
         }
 
         /* Update status */
-        * lfStatus = LF_FAIL;
+        if ( lfStatus != NULL ) * lfStatus = LF_FAIL;
 
         /* Return null value */
         return( lf_Real_s( 0.0 ) );

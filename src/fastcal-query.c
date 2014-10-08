@@ -50,7 +50,7 @@
     lf_Real_t lf_query_sensor( char const * const lfDevice, lf_Size_t const lfData, lf_Size_t const lfChannel, lf_Size_t * const lfStatus ) {
 
         /* Initialize query status */
-        * lfStatus = LF_SUCCESS;
+        if ( lfStatus != NULL ) * lfStatus = LF_SUCCESS;
 
         /* Eyesis4pi number 1 */
         if ( strcasecmp( lfDevice, LF_EYESIS4PI_1 ) == 0 ) {
@@ -68,7 +68,7 @@
         }
 
         /* Update query status */
-        * lfStatus = LF_FAIL;
+        if ( lfStatus != NULL ) * lfStatus = LF_FAIL;
 
         /* Return null value */
         return( lf_Real_s( 0.0 ) );

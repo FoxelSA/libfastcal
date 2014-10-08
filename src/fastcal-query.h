@@ -94,10 +94,11 @@
      *  \param lfDevice Device tag
      *  \param lfData Calibration data tag
      *  \param lfChannel Camera sensor channel number
+     *  \param lfStatus Query status
      *  \return Returns calibration data value
      */
 
-    lf_Real_t lf_query_sensor( const char const * lfDevice, const lf_Size_t lfData, const lf_Size_t lfChannel );
+    lf_Real_t lf_query_sensor( char const * const lfDevice, lf_Size_t const lfData, lf_Size_t const lfChannel, lf_Size_t * const lfStatus );
 
 /*
     Header - C/C++ compatibility

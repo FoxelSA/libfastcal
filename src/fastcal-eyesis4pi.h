@@ -114,10 +114,11 @@
      *  \param lfIndex Predefined index of eyesis4pi device
      *  \param lfData Calibration data tag
      *  \param lfChannel Camera sensor channel number
+     *  \param lfStatus Query status
      *  \return Returns calibration data value
      */
 
-    lf_Real_t lf_eyesis4pi_sensor( const lf_Size_t lfIndex, const lf_Size_t lfData, const lf_Size_t lfChannel );
+    lf_Real_t lf_eyesis4pi_sensor( lf_Size_t const lfIndex, lf_Size_t const lfData, lf_Size_t const lfChannel, lf_Size_t * const lfStatus );
 
 /*
     Header - C/C++ compatibility

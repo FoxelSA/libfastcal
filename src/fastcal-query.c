@@ -47,25 +47,28 @@
     Source - Principal calibration data server
  */
 
-    lf_Real_t lf_query_sensor( const char const * lfDevice, const lf_Size_t lfData, const lf_Size_t lfChannel ) {
+    lf_Real_t lf_query_sensor( char const * const lfDevice, lf_Size_t const lfData, lf_Size_t const lfChannel, lf_Size_t * const lfStatus ) {
+
+        /* Initialize query status */
+        * lfStatus = LF_SUCCESS;
 
         /* Eyesis4pi number 1 */
         if ( strcasecmp( lfDevice, LF_EYESIS4PI_1 ) == 0 ) {
 
             /* Call device-specific calibration access */
-            return( lf_eyesis4pi_sensor( 0, lfData, lfChannel ) );
+            return( lf_eyesis4pi_sensor( 0, lfData, lfChannel, lfStatus ) );
 
         /* Eyesis4pi number 2 */
         } else 
         if ( strcasecmp( lfDevice, LF_EYESIS4PI_2 ) == 0 ) {
 
             /* Call device-specific calibration access */
-            return( lf_eyesis4pi_sensor( 1, lfData, lfChannel ) );
+            return( lf_eyesis4pi_sensor( 1, lfData, lfChannel, lfStatus ) );
 
         }
 
-        /* Display message */
-        fprintf( stdout, "Error : Device not found\n" );
+        /* Update query status */
+        * lfStatus = LF_FAIL;
 
         /* Return null value */
         return( lf_Real_s( 0.0 ) );

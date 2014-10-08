@@ -53,7 +53,10 @@
     Source - Eyesis4pi-specific calibration data server
  */
 
-    lf_Real_t lf_eyesis4pi_sensor( const lf_Size_t lfIndex, const lf_Size_t lfData, const lf_Size_t lfChannel ) {
+    lf_Real_t lf_eyesis4pi_sensor( lf_Size_t const lfIndex, lf_Size_t const lfData, lf_Size_t const lfChannel, lf_Size_t * const lfStatus ) {
+
+        /* Initialize status */
+        * lfStatus = LF_SUCCESS;
 
         /* Switch on calibration value */
         if ( lfData == LF_EYESIS4PI_FOCAL ) {
@@ -159,8 +162,8 @@
 
         }
 
-        /* Display message */
-        fprintf( stdout, "Error : Calibration data not found\n" );
+        /* Update status */
+        * lfStatus = LF_FAIL;
 
         /* Return null value */
         return( lf_Real_s( 0.0 ) );

@@ -62,7 +62,7 @@
         if ( lfData == LF_EYESIS4PI_FOCAL ) {
 
             /* Return calibration data */
-            return( lfCalibFocal[lfIndex][lfChannel] );
+            return( lfCalibFocal[lfIndex][lfChannel] * lf_Real_s( 0.001 ) );
 
         } else 
         if ( lfData == LF_EYESIS4PI_AZIMUTH ) {

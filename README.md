@@ -4,7 +4,7 @@ The libfastcal is designed to access FOXEL camera calibration data values in the
 
 ### Documentation
 
-Documentation is not aviable for alpha 0.1.
+Documentation is not available for alpha 0.1.
 
 ### Copyright
 

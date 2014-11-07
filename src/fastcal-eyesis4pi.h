@@ -108,8 +108,8 @@
 
     /*! \brief Eyesis4pi-specific calibration data server
      *  
-     *  This function returns calibration data value of the desired
-     *  sensor of the pointed eyesis4pi device.
+     *  This function returns calibration data value of the desired sensor of 
+     *  the pointed eyesis4pi device.
      *  
      *  \param lfIndex Predefined index of eyesis4pi device
      *  \param lfData Calibration data tag

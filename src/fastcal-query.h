@@ -86,10 +86,11 @@
 
     /*! \brief Principal calibration data server
      *
-     *  This function gives access to calibration data about sensors of
-     *  any implemented camera. The camera is pointed using a predefined
-     *  tag given as parameter. The calibration data is obtained giving
-     *  the predefined tag. The sensor specified using its index.
+     *  This function gives access to calibration data about sensors of any 
+     *  implemented camera. The camera is pointed using a predefined tag, which
+     *  correspond to the main board MAC address, given as parameter. The
+     *  calibration data is obtained giving the predefined data tag. The desired
+     *  sensor is specified using its index.
      *  
      *  \param lfDevice Device tag
      *  \param lfData Calibration data tag

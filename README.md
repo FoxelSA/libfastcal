@@ -1,6 +1,6 @@
 ## libfastcal<br/>Fast calibration data access
 
-The libfastcal is designed to access FOXEL camera calibration data values in the fastest and safest way. This library is mainly used for research purpose and will probably not leave alpha 0.1 state.
+The libfastcal is designed to access FOXEL camera calibration data values in the fastest and safest way. This library is mainly used for research purpose and will probably not leave alpha state.
 
 ### Documentation
 

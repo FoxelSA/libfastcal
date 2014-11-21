@@ -1,10 +1,10 @@
 ## libfastcal<br/>Fast calibration data access
 
-The libfastcal is designed to access FOXEL camera calibration data values in the fastest and safest way. This library is mainly used for research purpose.
+The libfastcal is designed to access FOXEL camera calibration data values in the fastest and safest way.
 
 ### Documentation
 
-Documentation is not available for alpha 0.1.
+A detailed documentation can be generated through doxygen. A more general documentation can be consulted on the [wiki](https://github.com/niam-foxel/libfastcal/wiki).
 
 ### Copyright
 

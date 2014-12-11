@@ -106,35 +106,53 @@
     /* Define conversion constants */
     # define LF_DEG2RAD         ( LF_PI / lf_Real_s( 180.0 ) )
 
+    /* Define boolean constants */
+    # define LF_FALSE           0
+    # define LF_TRUE            1
+
 /*
     Header - Preprocessor macros
  */
 
     /* Define casting macro */
+    # define lf_Char_c( x )     ( ( lf_Char_t ) x )
     # define lf_Real_c( x )     ( ( lf_Real_t ) x )
     # define lf_Size_c( x )     ( ( lf_Size_t ) x )
+    # define lf_Enum_c( x )     ( ( lf_Enum_t ) x )
 
     /* Define litteral suffix */
+    # define lf_Char_s( x )     ( x      )
     # define lf_Real_s( x )     ( x ## l )
     # define lf_Size_s( x )     ( x ## l )
+    # define lf_Enum_s( x )     ( x ## l )
 
     /* Define formated output specifiers */
+    # define lf_Char_p          "c"
     # define lf_Real_p          "lf"
     # define lf_Size_p          "li"
+    # define lf_Enum_p          "li"
 
     /* Define formated input specifiers */
+    # define lf_Char_i          "c"
     # define lf_Real_i          "lf"
     # define lf_Size_i          "li"
+    # define lf_Enum_i          "li"
 
 /*
     Header - Typedefs
  */
 
+    /* Define generic char type */
+    typedef unsigned char lf_Char_t;
+
     /* Define floating point type */
-    typedef double   lf_Real_t;
+    typedef double        lf_Real_t;
 
     /* Define generic index type */
-    typedef long int lf_Size_t;
+    typedef long int      lf_Size_t;
+
+    /* Define generic enumeration type */
+    typedef long int      lf_Enum_t;
 
 /*
     Header - Structures

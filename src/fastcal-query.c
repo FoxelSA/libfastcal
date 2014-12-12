@@ -87,12 +87,15 @@
         /* Cache descritor variables */
         static lf_Enum_t lfdCache[LF_CACHE] = { LF_FALSE };
 
-        static lf_Char_t lfKey[256] = { 0 };
+        /* Key string variables */
+        static lf_Char_t lfKey[] = "focalLength_--";
 
         /* Cache detection */
         if ( lfdCache[lfChannel] == LF_FALSE ) {
 
-            sprintf( ( char * ) lfKey, "%s_%02li" ,"focalLength", lfChannel );
+            /* Construct key string */
+            lfKey[12] = LF_UTF8_ZERO + ( lfChannel / lf_Size_s( 10 ) );
+            lfKey[13] = LF_UTF8_ZERO + ( lfChannel % lf_Size_s( 10 ) );
 
             /* Query value */
             lfvCache[lfChannel] = atof( ( char * ) lfDesc->dsMap[lf_key( lfKey, lfDesc ) + 1] );

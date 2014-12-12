@@ -72,11 +72,6 @@
     # define LF_PARSE_VALUE lf_Enum_s( 1 )
     # define LF_PARSE_SKIP  lf_Enum_s( 2 )
 
-    /* Define UTF-8 constants */
-    # define LF_UTF8_NUL    lf_Char_s( 0x00 )
-    # define LF_UTF8_SP     lf_Char_s( 0x20 )
-    # define LF_UTF8_EQUAL  lf_Char_s( 0x3D )
-
     /* Define key search flags */
     # define LF_INVALID     lf_Size_s( -1 )
     

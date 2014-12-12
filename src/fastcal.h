@@ -115,6 +115,12 @@
     /* Define channel cache size */
     # define LF_CACHE           64
 
+    /* Define UTF-8 constants */
+    # define LF_UTF8_NUL    lf_Char_s( 0x00 )
+    # define LF_UTF8_SP     lf_Char_s( 0x20 )
+    # define LF_UTF8_EQUAL  lf_Char_s( 0x3D )
+    # define LF_UTF8_ZERO   lf_Char_s( 0x30 )
+
 /*
     Header - Preprocessor macros
  */

@@ -67,6 +67,9 @@
         /* Returned value variables */
         lf_Enum_t lfReturn = LF_FALSE;
 
+        /* Optimization variables */
+        lf_Char_t * lfDirect = NULL;
+
         /* Initialize structure */
         lfDesc->dsSize  = 0;
         lfDesc->dsData  = NULL;
@@ -97,16 +100,19 @@
                         /* Parse file content */
                         for ( lfParse = lf_Size_s( 0 ); lfParse < lfDesc->dsSize; lfParse ++ ) {
 
+                            /* Pre-computation for optimization */
+                            lfDirect = lfDesc->dsData + lfParse;
+
                             /* Check character value */
-                            if ( * ( lfDesc->dsData + lfParse ) == LF_UTF8_EQUAL ) {
+                            if ( * lfDirect == LF_UTF8_EQUAL ) {
 
                                 /* Update parsing flag */
                                 lfFlag = LF_PARSE_VALUE;
 
                                 /* Create null terminated string */
-                                * ( lfDesc->dsData + lfParse ) = LF_UTF8_NUL;
+                                * lfDirect = LF_UTF8_NUL;
 
-                            } else if ( * ( lfDesc->dsData + lfParse ) >= LF_UTF8_SP ) {
+                            } else if ( * lfDirect >= LF_UTF8_SP ) {
 
                                 /* Check mapping memory allocation */
                                 if ( lfDesc->dsCount >= lfLength ) {
@@ -126,7 +132,7 @@
                                     lfFlag = LF_PARSE_SKIP;
 
                                     /* Map key offset */
-                                    * ( lfDesc->dsMap + ( lfDesc->dsCount ) ) = lfDesc->dsData + lfParse;
+                                    * ( lfDesc->dsMap + lfDesc->dsCount ) = lfDirect;
 
                                     lfDesc->dsCount ++;
 
@@ -136,7 +142,7 @@
                                     lfFlag = LF_PARSE_SKIP;
 
                                     /* Map value offset */
-                                    * ( lfDesc->dsMap + ( lfDesc->dsCount ) ) = lfDesc->dsData + lfParse;
+                                    * ( lfDesc->dsMap + lfDesc->dsCount ) = lfDirect;
 
                                     lfDesc->dsCount ++;
 
@@ -148,7 +154,7 @@
                                 lfFlag = LF_PARSE_KEY;
 
                                 /* Create null terminated string */
-                                * ( lfDesc->dsData + lfParse ) = LF_UTF8_NUL;
+                                * lfDirect = LF_UTF8_NUL;
 
                             }
 
@@ -206,9 +212,6 @@
 
         }
 
-        /* Unset size value */
-        lfDesc->dsCount = 0;
-
         /* Check memory allocation */
         if ( lfDesc->dsData != NULL ) {
 
@@ -219,9 +222,6 @@
             lfDesc->dsData = NULL;
 
         }
-
-        /* Unset size value */
-        lfDesc->dsSize = 0;
 
     }
 

@@ -63,6 +63,7 @@
 
     # include "fastcal.h"
     # include "fastcal-eyesis4pi.h"
+    # include "fastcal-parser.h"
 
 /*
     Header - Preprocessor definitions
@@ -100,6 +101,8 @@
      */
 
     lf_Real_t lf_query_sensor( char const * const lfDevice, lf_Size_t const lfData, lf_Size_t const lfChannel, lf_Size_t * const lfStatus );
+
+    lf_Real_t lf_query_FocalLength ( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc );
 
 /*
     Header - C/C++ compatibility

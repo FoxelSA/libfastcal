@@ -87,6 +87,7 @@
  */
 
     # include <stdio.h>
+    # include <stdlib.h>
     # include <string.h>
 
 /*
@@ -106,9 +107,13 @@
     /* Define conversion constants */
     # define LF_DEG2RAD         ( LF_PI / lf_Real_s( 180.0 ) )
 
+
     /* Define boolean constants */
     # define LF_FALSE           0
     # define LF_TRUE            1
+
+    /* Define channel cache size */
+    # define LF_CACHE           64
 
 /*
     Header - Preprocessor macros
@@ -154,9 +159,24 @@
     /* Define generic enumeration type */
     typedef long int      lf_Enum_t;
 
+    /* Define generic void type */
+    typedef void          lf_Void_t;
+
 /*
     Header - Structures
  */
+
+    typedef struct lf_Descriptor_struct {
+
+        /* Data buffer */
+        lf_Size_t    dsSize;
+        lf_Char_t  * dsData;
+
+        /* Buffer offsets mapping */
+        lf_Char_t ** dsMap;
+        lf_Size_t    dsCount;
+
+    } lf_Descriptor_t;
 
 /*
     Header - Function prototypes

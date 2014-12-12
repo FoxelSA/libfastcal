@@ -67,6 +67,20 @@
     Header - Preprocessor definitions
  */
 
+    /* Define parsing flag variables */
+    # define LF_PARSE_KEY   lf_Enum_s( 0 )
+    # define LF_PARSE_VALUE lf_Enum_s( 1 )
+    # define LF_PARSE_SKIP  lf_Enum_s( 2 )
+
+    /* Define UTF-8 constants */
+    # define LF_UTF8_NUL    lf_Char_s( 0x00 )
+    # define LF_UTF8_SP     lf_Char_s( 0x20 )
+    # define LF_UTF8_EQUAL  lf_Char_s( 0x3D )
+
+    /* Define key search flags */
+    # define LF_INVALID     lf_Size_s( -1 )
+    
+
 /*
     Header - Preprocessor macros
  */
@@ -85,7 +99,15 @@
 
     /*! ...*/
 
-    lf_Enum_t lf_parse ( lf_Char_t * lfMacAddress, lf_Char_t * lfMountPoint );
+    lf_Enum_t lf_parse ( lf_Char_t * lfMacAddress, lf_Char_t * lfMountPoint, lf_Descriptor_t * lfDesc );
+
+    /*! ...*/
+
+    lf_Void_t lf_release ( lf_Descriptor_t * lfDesc );
+
+    /*! ...*/
+
+    lf_Size_t lf_key( lf_Char_t const * const lfKey, lf_Descriptor_t const * const lfDesc );
 
 /*
     Header - C/C++ compatibility

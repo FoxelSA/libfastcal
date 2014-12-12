@@ -75,3 +75,35 @@
 
     }
 
+/*
+    Source - Query methods
+ */
+
+    lf_Real_t lf_query_FocalLength( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc ) {
+
+        /* Calibration data cache variables */
+        static lf_Real_t lfvCache[LF_CACHE] = { lf_Real_s( 0.0 ) };
+
+        /* Cache descritor variables */
+        static lf_Enum_t lfdCache[LF_CACHE] = { LF_FALSE };
+
+        static lf_Char_t lfKey[256] = { 0 };
+
+        /* Cache detection */
+        if ( lfdCache[lfChannel] == LF_FALSE ) {
+
+            sprintf( ( char * ) lfKey, "%s_%02li" ,"focalLength", lfChannel );
+
+            /* Query value */
+            lfvCache[lfChannel] = atof( ( char * ) lfDesc->dsMap[lf_key( lfKey, lfDesc ) + 1] );
+
+            /* Update cache state */
+            lfdCache[lfChannel] = LF_TRUE;
+
+        }
+
+        /* Return cached value */
+        return( lfvCache[lfChannel] );
+
+    }
+

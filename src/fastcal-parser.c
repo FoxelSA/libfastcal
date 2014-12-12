@@ -44,33 +44,212 @@
     # include "fastcal-parser.h"
 
 /*
-    Source - Calibration file parser
+    Source - Descriptor creator
  */
 
-    lf_Enum_t lf_parse( lf_Char_t * lfMacAddress, lf_Char_t * lfMountPoint ) {
+    lf_Enum_t lf_parse( lf_Char_t * lfMacAddress, lf_Char_t * lfMountPoint, lf_Descriptor_t * lfDesc ) {
 
         /* Path variables */
-        lf_Char_t lfPath[256] = { 0 };
+        lf_Char_t lfPath[256] = { lf_Char_s( 0 ) };
 
         /* File handle variables */
         FILE * lfStream = NULL;
+
+        /* Parsing flag variables */
+        lf_Enum_t lfFlag = LF_PARSE_KEY;
+
+        /* Buffer allocation size variables */
+        lf_Size_t lfLength = lf_Size_s( 0 );
+
+        /* Parsing variables */
+        lf_Size_t lfParse = lf_Size_s( 0 );
+
+        /* Returned value variables */
+        lf_Enum_t lfReturn = LF_FALSE;
+
+        /* Initialize structure */
+        lfDesc->dsSize  = 0;
+        lfDesc->dsData  = NULL;
+        lfDesc->dsCount = 0;
+        lfDesc->dsMap   = NULL;
 
         /* Create calibration file path */
         sprintf( ( char * ) lfPath, "%s/camera/%s/info/fastcal/calibration.key", lfMountPoint, lfMacAddress );
 
         /* Create stream handle */
-        if ( ( lfStream = fopen( ( char * ) lfPath, "b" ) ) != NULL ) {
+        if ( ( lfStream = fopen( ( char * ) lfPath, "rb" ) ) != NULL ) {
 
-            /* ... */
+            /* Head to end of file */
+            fseek( lfStream, 0L, SEEK_END );
 
-            /* Return success code */
-            return( LF_TRUE );
-        
-        } else {
+            /* Retrieve and check stream size */
+            if ( ( lfDesc->dsSize = ftell( lfStream ) ) > 0 ) {
 
-            /* Return error code */
-            return( LF_FALSE );
+                /* Head to beginning of file */
+                fseek( lfStream, 0L, SEEK_SET );
+
+                /* Allocate memory */
+                if ( ( lfDesc->dsData = ( lf_Char_t * ) malloc( lfDesc->dsSize * sizeof( lf_Char_t ) ) ) != NULL ) {
+
+                    /* Read file content */
+                    if ( fread( lfDesc->dsData, 1, lfDesc->dsSize, lfStream ) == lfDesc->dsSize ) {
+
+                        /* Parse file content */
+                        for ( lfParse = lf_Size_s( 0 ); lfParse < lfDesc->dsSize; lfParse ++ ) {
+
+                            /* Check character value */
+                            if ( * ( lfDesc->dsData + lfParse ) == LF_UTF8_EQUAL ) {
+
+                                /* Update parsing flag */
+                                lfFlag = LF_PARSE_VALUE;
+
+                                /* Create null terminated string */
+                                * ( lfDesc->dsData + lfParse ) = LF_UTF8_NUL;
+
+                            } else if ( * ( lfDesc->dsData + lfParse ) >= LF_UTF8_SP ) {
+
+                                /* Check mapping memory allocation */
+                                if ( lfDesc->dsCount >= lfLength ) {
+
+                                    /* Update mapping memory descriptor */
+                                    lfLength += lf_Size_s( 1024 );
+
+                                    /* Update mapping memory */
+                                    lfDesc->dsMap = ( lf_Char_t ** ) realloc( ( void * ) lfDesc->dsMap, lfLength * sizeof( lf_Char_t * ) );
+
+                                }
+
+                                /* Check parsing flag */
+                                if ( lfFlag == LF_PARSE_KEY ) {
+
+                                    /* Update parsing flag */
+                                    lfFlag = LF_PARSE_SKIP;
+
+                                    /* Map key offset */
+                                    * ( lfDesc->dsMap + ( lfDesc->dsCount ) ) = lfDesc->dsData + lfParse;
+
+                                    lfDesc->dsCount ++;
+
+                                } else if ( lfFlag == LF_PARSE_VALUE )  {
+
+                                    /* Update parsing flag */
+                                    lfFlag = LF_PARSE_SKIP;
+
+                                    /* Map value offset */
+                                    * ( lfDesc->dsMap + ( lfDesc->dsCount ) ) = lfDesc->dsData + lfParse;
+
+                                    lfDesc->dsCount ++;
+
+                                }
+
+                            } else {
+
+                                /* Update parsing flag */
+                                lfFlag = LF_PARSE_KEY;
+
+                                /* Create null terminated string */
+                                * ( lfDesc->dsData + lfParse ) = LF_UTF8_NUL;
+
+                            }
+
+                        } /* End of loop */
+
+                        /* Update exit code */
+                        lfReturn = LF_TRUE;
+
+                    }
+
+                    /* Memory cleaning on failure */
+                    if ( lfReturn == LF_FALSE ) {
+
+                        /* Detect allocated memory */
+                        if ( lfDesc->dsData != NULL ) {
+
+                            /* Unallocate memory */
+                            free( lfDesc->dsData );
+
+                            /* Invalidate pointer */
+                            lfDesc->dsData = NULL;
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+            /* Close stream */
+            fclose( lfStream );
 
         }
 
+        /* Return error flag */
+        return ( lfReturn );
+
     }
+
+/*
+    Source - Descriptor release
+ */
+
+    lf_Void_t lf_release( lf_Descriptor_t * lfDesc ) {
+
+        /* Check memory allocation */
+        if ( lfDesc->dsMap != NULL ) {
+
+            /* Unallocate memory */
+            free( lfDesc->dsMap );
+
+            /* Invalidate pointer */
+            lfDesc->dsMap = NULL;
+
+        }
+
+        /* Unset size value */
+        lfDesc->dsCount = 0;
+
+        /* Check memory allocation */
+        if ( lfDesc->dsData != NULL ) {
+
+            /* Unallocate memory */
+            free( lfDesc->dsData );
+
+            /* Invalidate pointer */
+            lfDesc->dsData = NULL;
+
+        }
+
+        /* Unset size value */
+        lfDesc->dsSize = 0;
+
+    }
+
+/*
+    Source - Key searching
+ */
+
+    lf_Size_t lf_key( lf_Char_t const * const lfKey, lf_Descriptor_t const * const lfDesc ) {
+
+        /* Parsing variables */
+        lf_Size_t lfParse = lf_Size_s( 0 );
+
+        /* Returned value variables */
+        lf_Size_t lfReturn = LF_INVALID;
+
+        /* Simple loop search */
+        while ( ( lfParse < lfDesc->dsCount ) && ( lfReturn == LF_INVALID ) ) {
+
+            /* Compare string */
+            if ( strcmp( ( char * ) lfKey, ( char * ) lfDesc->dsMap[lfParse] ) == 0 ) lfReturn = lfParse;
+
+            /* Update search index */
+            lfParse += lf_Size_s( 2 );
+
+        }
+
+        /* Return search result */
+        return( lfReturn );
+
+    }
+

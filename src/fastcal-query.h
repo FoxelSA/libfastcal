@@ -39,7 +39,7 @@
     /*! \brief \file   fastcal-query.h
      *  \author Nils Hamel <n.hamel@foxel.ch>
      *
-     *  Fast calibration data access
+     *  Fast calibration data access methods
      */
 
 /*

@@ -39,7 +39,7 @@
     /*! \file   fastcal-parser.h
      *  \author Nils Hamel <n.hamel@foxel.ch>
      *
-     *  Key-value file parser
+     *  Key/value-file management
      */
 
 /*

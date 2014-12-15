@@ -1,6 +1,6 @@
 ## libfastcal<br/>Fast calibration data access
 
-The libfastcal provides fast Elphel camera devices calibration data values access in the most fast and simple possible way. The library expects key/value-files for each camera that contains the calibration data that library user wants to access,
+The libfastcal library provides fast Elphel camera calibration data access in the most fast and simple possible way. The library expects key/value-files for each camera that contains the calibration data that library users want to access,
 
 ### Documentation
 

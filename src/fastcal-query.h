@@ -62,7 +62,6 @@
  */
 
     # include "fastcal.h"
-    # include "fastcal-eyesis4pi.h"
     # include "fastcal-parser.h"
 
 /*
@@ -85,22 +84,7 @@
     Header - Function prototypes
  */
 
-    /*! \brief Principal calibration data server
-     *
-     *  This function gives access to calibration data about sensors of any 
-     *  implemented camera. The camera is pointed using a predefined tag, which
-     *  correspond to the main board MAC address, given as parameter. The
-     *  calibration data is obtained giving the predefined data tag. The desired
-     *  sensor is specified using its index.
-     *  
-     *  \param lfDevice Device tag
-     *  \param lfData Calibration data tag
-     *  \param lfChannel Camera sensor channel number
-     *  \param lfStatus Query status
-     *  \return Returns calibration data value
-     */
-
-    lf_Real_t lf_query_sensor( char const * const lfDevice, lf_Size_t const lfData, lf_Size_t const lfChannel, lf_Size_t * const lfStatus );
+    /*! ... */
 
     lf_Real_t lf_query_FocalLength ( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc );
 

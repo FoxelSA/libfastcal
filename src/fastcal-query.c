@@ -44,38 +44,6 @@
     # include "fastcal-query.h"
 
 /*
-    Source - Principal calibration data server
- */
-
-    lf_Real_t lf_query_sensor( char const * const lfDevice, lf_Size_t const lfData, lf_Size_t const lfChannel, lf_Size_t * const lfStatus ) {
-
-        /* Initialize query status */
-        if ( lfStatus != NULL ) * lfStatus = LF_SUCCESS;
-
-        /* Eyesis4pi number 1 */
-        if ( strcasecmp( lfDevice, LF_EYESIS4PI_1 ) == 0 ) {
-
-            /* Call device-specific calibration access */
-            return( lf_eyesis4pi_sensor( 0, lfData, lfChannel, lfStatus ) );
-
-        /* Eyesis4pi number 2 */
-        } else 
-        if ( strcasecmp( lfDevice, LF_EYESIS4PI_2 ) == 0 ) {
-
-            /* Call device-specific calibration access */
-            return( lf_eyesis4pi_sensor( 1, lfData, lfChannel, lfStatus ) );
-
-        }
-
-        /* Update query status */
-        if ( lfStatus != NULL ) * lfStatus = LF_FAIL;
-
-        /* Return null value */
-        return( lf_Real_s( 0.0 ) );
-
-    }
-
-/*
     Source - Query methods
  */
 

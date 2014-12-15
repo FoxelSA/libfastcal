@@ -102,7 +102,7 @@
 
     /*! ...*/
 
-    lf_Size_t lf_key( lf_Char_t const * const lfKey, lf_Descriptor_t const * const lfDesc );
+    lf_Size_t lf_key ( lf_Char_t const * const lfKey, lf_Descriptor_t const * const lfDesc );
 
 /*
     Header - C/C++ compatibility

@@ -132,9 +132,7 @@
                                     lfFlag = LF_PARSE_SKIP;
 
                                     /* Map key offset */
-                                    * ( lfDesc->dsMap + lfDesc->dsCount ) = lfDirect;
-
-                                    lfDesc->dsCount ++;
+                                    * ( lfDesc->dsMap + ( lfDesc->dsCount ++ ) ) = lfDirect;
 
                                 } else if ( lfFlag == LF_PARSE_VALUE )  {
 
@@ -142,9 +140,7 @@
                                     lfFlag = LF_PARSE_SKIP;
 
                                     /* Map value offset */
-                                    * ( lfDesc->dsMap + lfDesc->dsCount ) = lfDirect;
-
-                                    lfDesc->dsCount ++;
+                                    * ( lfDesc->dsMap + ( lfDesc->dsCount ++ ) ) = lfDirect;
 
                                 }
 

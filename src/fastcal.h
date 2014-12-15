@@ -94,19 +94,8 @@
     Header - Preprocessor definitions
  */
 
-    /* Define error variables */
-    # define LF_FAIL            lf_Size_s( 0 )
-    # define LF_SUCCESS         lf_Size_s( 1 )
-
     /* Define fundamental constants */
     # define LF_PI              lf_Real_s( 3.14159265358979323846264338327950 )
-
-    /* Define secondary constants */
-    # define LF_PI2             ( lf_Real_s( 2.0 ) * LF_PI )
-
-    /* Define conversion constants */
-    # define LF_DEG2RAD         ( LF_PI / lf_Real_s( 180.0 ) )
-
 
     /* Define boolean constants */
     # define LF_FALSE           0

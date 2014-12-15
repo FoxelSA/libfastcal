@@ -182,7 +182,7 @@
      *  \return Queried calibration value
      */
 
-    lf_Size_t lf_query_ImageFullLength( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc );
+    lf_Size_t lf_query_ImageFullLength ( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc );
 
     /*! \brief Query methods for integer values
      *
@@ -322,7 +322,7 @@
      *  \return Queried calibration value
      */
 
-    lf_Real_t lf_query_px0( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc );
+    lf_Real_t lf_query_px0 ( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc );
 
     /*! \brief Query methods for real values
      *
@@ -336,7 +336,7 @@
      *  \return Queried calibration value
      */
 
-    lf_Real_t lf_query_py0( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc );
+    lf_Real_t lf_query_py0 ( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc );
 
     /*! \brief Query methods for real values
      *
@@ -350,7 +350,7 @@
      *  \return Queried calibration value
      */
 
-    lf_Real_t lf_query_roll( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc );
+    lf_Real_t lf_query_roll ( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc );
 
     /*! \brief Query methods for real values
      *

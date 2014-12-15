@@ -86,7 +86,95 @@
 
     /*! ... */
 
-    lf_Real_t lf_query_FocalLength ( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc );
+    lf_Char_t * lf_query_camera ( lf_Descriptor_t const * const lfDesc );
+
+    /*! ... */
+
+    lf_Char_t * lf_query_model ( lf_Descriptor_t const * const lfDesc );
+
+    /*! ... */
+
+    lf_Char_t * lf_query_imu ( lf_Descriptor_t const * const lfDesc );
+
+    /*! ... */
+
+    lf_Char_t * lf_query_gps ( lf_Descriptor_t const * const lfDesc );
+
+    /*! ... */
+
+    lf_Size_t lf_query_modules ( lf_Descriptor_t const * const lfDesc );
+
+    /*! ... */
+
+    lf_Size_t lf_query_channels ( lf_Descriptor_t const * const lfDesc );
+
+    /*! ... */
+
+    lf_Size_t lf_query_ImageFullWidth ( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc );
+
+    /*! ... */
+
+    lf_Size_t lf_query_ImageFullLength( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc );
+
+    /*! ... */
+
+    lf_Size_t lf_query_XPosition ( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc );
+
+    /*! ... */
+
+    lf_Size_t lf_query_YPosition ( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc );
+
+    /*! ... */
+
+    lf_Size_t lf_query_pixelCorrectionWidth ( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc );
+
+    /*! ... */
+
+    lf_Size_t lf_query_pixelCorrectionHeight ( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc );
+
+    /*! ... */
+
+    lf_Real_t lf_query_focalLength ( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc );
+
+    /*! ... */
+
+    lf_Real_t lf_query_azimuth ( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc );
+
+    /*! ... */
+
+    lf_Real_t lf_query_elevation ( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc );
+
+    /*! ... */
+
+    lf_Real_t lf_query_heading ( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc );
+
+    /*! ... */
+
+    lf_Real_t lf_query_pixelSize ( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc );
+
+    /*! ... */
+
+    lf_Real_t lf_query_px0( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc );
+
+    /*! ... */
+
+    lf_Real_t lf_query_py0( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc );
+
+    /*! ... */
+
+    lf_Real_t lf_query_roll( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc );
+
+    /*! ... */
+
+    lf_Real_t lf_query_radius ( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc );
+
+    /*! ... */
+
+    lf_Real_t lf_query_height ( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc );
+
+    /*! ... */
+
+    lf_Real_t lf_query_entrancePupilForward ( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc );
 
 /*
     Header - C/C++ compatibility

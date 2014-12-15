@@ -122,7 +122,7 @@
 
     /* Define litteral suffix */
     # define lf_Char_s( x )     ( x      )
-    # define lf_Real_s( x )     ( x ## l )
+    # define lf_Real_s( x )     ( x      )
     # define lf_Size_s( x )     ( x ## l )
     # define lf_Enum_s( x )     ( x ## l )
 
@@ -137,6 +137,10 @@
     # define lf_Real_i          "lf"
     # define lf_Size_i          "li"
     # define lf_Enum_i          "li"
+
+    /* Define string conversion function */
+    # define lf_Real_str( x )   atof( x )
+    # define lf_Size_str( x )   atol( x )
 
 /*
     Header - Typedefs

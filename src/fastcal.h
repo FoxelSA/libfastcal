@@ -87,58 +87,111 @@
  */
 
     # include <stdio.h>
+    # include <stdlib.h>
     # include <string.h>
 
 /*
     Header - Preprocessor definitions
  */
 
-    /* Define error variables */
-    # define LF_FAIL            lf_Size_s( 0 )
-    # define LF_SUCCESS         lf_Size_s( 1 )
-
     /* Define fundamental constants */
     # define LF_PI              lf_Real_s( 3.14159265358979323846264338327950 )
 
-    /* Define secondary constants */
-    # define LF_PI2             ( lf_Real_s( 2.0 ) * LF_PI )
+    /* Define boolean constants */
+    # define LF_FALSE           0
+    # define LF_TRUE            1
 
-    /* Define conversion constants */
-    # define LF_DEG2RAD         ( LF_PI / lf_Real_s( 180.0 ) )
+    /* Define channel cache size */
+    # define LF_CACHE           64
+
+    /* Define UTF-8 constants */
+    # define LF_UTF8_NUL    lf_Char_s( 0x00 )
+    # define LF_UTF8_SP     lf_Char_s( 0x20 )
+    # define LF_UTF8_EQUAL  lf_Char_s( 0x3D )
+    # define LF_UTF8_ZERO   lf_Char_s( 0x30 )
 
 /*
     Header - Preprocessor macros
  */
 
     /* Define casting macro */
+    # define lf_Char_c( x )     ( ( lf_Char_t ) x )
     # define lf_Real_c( x )     ( ( lf_Real_t ) x )
     # define lf_Size_c( x )     ( ( lf_Size_t ) x )
+    # define lf_Enum_c( x )     ( ( lf_Enum_t ) x )
 
     /* Define litteral suffix */
-    # define lf_Real_s( x )     ( x ## l )
+    # define lf_Char_s( x )     ( x      )
+    # define lf_Real_s( x )     ( x      )
     # define lf_Size_s( x )     ( x ## l )
+    # define lf_Enum_s( x )     ( x ## l )
 
     /* Define formated output specifiers */
+    # define lf_Char_p          "c"
     # define lf_Real_p          "lf"
     # define lf_Size_p          "li"
+    # define lf_Enum_p          "li"
 
     /* Define formated input specifiers */
+    # define lf_Char_i          "c"
     # define lf_Real_i          "lf"
     # define lf_Size_i          "li"
+    # define lf_Enum_i          "li"
+
+    /* Define string conversion function */
+    # define lf_Real_str( x )   atof( x )
+    # define lf_Size_str( x )   atol( x )
 
 /*
     Header - Typedefs
  */
 
+    /* Define generic char type */
+    typedef unsigned char lf_Char_t;
+
     /* Define floating point type */
-    typedef double   lf_Real_t;
+    typedef double        lf_Real_t;
 
     /* Define generic index type */
-    typedef long int lf_Size_t;
+    typedef long int      lf_Size_t;
+
+    /* Define generic enumeration type */
+    typedef long int      lf_Enum_t;
+
+    /* Define generic void type */
+    typedef void          lf_Void_t;
 
 /*
     Header - Structures
  */
+
+    /*! \struct lf_Descriptor_struct
+     *  \brief Key-file descriptor
+     *
+     *  This structure stores needed information to provide a fast access to
+     *  calibration data contained in the considered key/value-file.
+     *
+     *  \var lf_Descriptor_struct::dsSize
+     *  Size, in bytes, of the key-file
+     *  \var lf_Descriptor_struct::dsData
+     *  Key-file content storage memory
+     *  \var lf_Descriptor_struct::dsMap
+     *  Key and value offset mapping in key-file content
+     *  \var lf_Descriptor_struct::dsCount
+     *  Mapping size, in key and value units
+     */ 
+
+    typedef struct lf_Descriptor_struct {
+
+        /* Data buffer */
+        lf_Size_t    dsSize;
+        lf_Char_t  * dsData;
+
+        /* Buffer offsets mapping */
+        lf_Char_t ** dsMap;
+        lf_Size_t    dsCount;
+
+    } lf_Descriptor_t;
 
 /*
     Header - Function prototypes

@@ -86,8 +86,8 @@
 
     /*! \brief Query methods for strings
      *
-     *  This function returns desired data based on the calibration key-file
-     *  descriptor. The descriptor has to be already builded and not released.
+     *  This function returns desired data based on calibration key/value-file
+     *  descriptor. The descriptor has to be already built and not released.
      *
      *  \param  lfDesc      Calibration file descriptor
      *
@@ -98,8 +98,8 @@
 
     /*! \brief Query methods for strings
      *
-     *  This function returns desired data based on the calibration key-file
-     *  descriptor. The descriptor has to be already builded and not released.
+     *  This function returns desired data based on calibration key/value-file
+     *  descriptor. The descriptor has to be already built and not released.
      *
      *  \param  lfDesc      Calibration file descriptor
      *
@@ -110,8 +110,8 @@
 
     /*! \brief Query methods for strings
      *
-     *  This function returns desired data on the base of the calibration file
-     *  descriptor. The descriptor has to be already builded and not released.
+     *  This function returns desired data based on calibration key/value-file
+     *  descriptor. The descriptor has to be already built and not released.
      *
      *  \param  lfDesc      Calibration file descriptor
      *
@@ -122,8 +122,8 @@
 
     /*! \brief Query methods for strings
      *
-     *  This function returns desired data based on the calibration key-file
-     *  descriptor. The descriptor has to be already builded and not released.
+     *  This function returns desired data based on calibration key/value-file
+     *  descriptor. The descriptor has to be already built and not released.
      *
      *  \param  lfDesc      Calibration file descriptor
      *
@@ -134,8 +134,8 @@
 
     /*! \brief Query methods for strings
      *
-     *  This function returns desired data based on the calibration key-file
-     *  descriptor. The descriptor has to be already builded and not released.
+     *  This function returns desired data based on calibration key/value-file
+     *  descriptor. The descriptor has to be already built and not released.
      *
      *  \param  lfDesc      Calibration file descriptor
      *
@@ -146,8 +146,8 @@
 
     /*! \brief Query methods for strings
      *
-     *  This function returns desired data based on the calibration key-file
-     *  descriptor. The descriptor has to be already builded and not released.
+     *  This function returns desired data based on calibration key/value-file
+     *  descriptor. The descriptor has to be already built and not released.
      *
      *  \param  lfDesc      Calibration file descriptor
      *
@@ -159,8 +159,8 @@
     /*! \brief Query methods for integer values
      *
      *  This function returns desired data about specified sensor channel based
-     *  on calibration key-file descriptor. The descriptor has to be already 
-     *  builded and not released.
+     *  on calibration key/value-file descriptor. The descriptor has to be built 
+     *  and not released.
      *
      *  \param  lfDesc      Calibration file descriptor
      *  \param  lfChannel   Sensor channel index
@@ -173,8 +173,8 @@
     /*! \brief Query methods for integer values
      *
      *  This function returns desired data about specified sensor channel based
-     *  on calibration key-file descriptor. The descriptor has to be already 
-     *  builded and not released.
+     *  on calibration key/value-file descriptor. The descriptor has to be built 
+     *  and not released.
      *
      *  \param  lfDesc      Calibration file descriptor
      *  \param  lfChannel   Sensor channel index
@@ -187,8 +187,8 @@
     /*! \brief Query methods for integer values
      *
      *  This function returns desired data about specified sensor channel based
-     *  on calibration key-file descriptor. The descriptor has to be already 
-     *  builded and not released.
+     *  on calibration key/value-file descriptor. The descriptor has to be built 
+     *  and not released.
      *
      *  \param  lfDesc      Calibration file descriptor
      *  \param  lfChannel   Sensor channel index
@@ -201,8 +201,8 @@
     /*! \brief Query methods for integer values
      *
      *  This function returns desired data about specified sensor channel based
-     *  on calibration key-file descriptor. The descriptor has to be already 
-     *  builded and not released.
+     *  on calibration key/value-file descriptor. The descriptor has to be built 
+     *  and not released.
      *
      *  \param  lfDesc      Calibration file descriptor
      *  \param  lfChannel   Sensor channel index
@@ -215,8 +215,8 @@
     /*! \brief Query methods for integer values
      *
      *  This function returns desired data about specified sensor channel based
-     *  on calibration key-file descriptor. The descriptor has to be already 
-     *  builded and not released.
+     *  on calibration key/value-file descriptor. The descriptor has to be built 
+     *  and not released.
      *
      *  \param  lfDesc      Calibration file descriptor
      *  \param  lfChannel   Sensor channel index
@@ -229,8 +229,8 @@
     /*! \brief Query methods for integer values
      *
      *  This function returns desired data about specified sensor channel based
-     *  on calibration key-file descriptor. The descriptor has to be already 
-     *  builded and not released.
+     *  on calibration key/value-file descriptor. The descriptor has to be built 
+     *  and not released.
      *
      *  \param  lfDesc      Calibration file descriptor
      *  \param  lfChannel   Sensor channel index
@@ -243,8 +243,8 @@
     /*! \brief Query methods for real values
      *
      *  This function returns desired data about specified sensor channel based
-     *  on calibration key-file descriptor. The descriptor has to be already 
-     *  builded and not released.
+     *  on calibration key/value-file descriptor. The descriptor has to be built 
+     *  and not released.
      *
      *  \param  lfDesc      Calibration file descriptor
      *  \param  lfChannel   Sensor channel index
@@ -257,8 +257,8 @@
     /*! \brief Query methods for real values
      *
      *  This function returns desired data about specified sensor channel based
-     *  on calibration key-file descriptor. The descriptor has to be already 
-     *  builded and not released.
+     *  on calibration key/value-file descriptor. The descriptor has to be built 
+     *  and not released.
      *
      *  \param  lfDesc      Calibration file descriptor
      *  \param  lfChannel   Sensor channel index
@@ -271,8 +271,8 @@
     /*! \brief Query methods for real values
      *
      *  This function returns desired data about specified sensor channel based
-     *  on calibration key-file descriptor. The descriptor has to be already 
-     *  builded and not released.
+     *  on calibration key/value-file descriptor. The descriptor has to be built 
+     *  and not released.
      *
      *  \param  lfDesc      Calibration file descriptor
      *  \param  lfChannel   Sensor channel index
@@ -285,8 +285,8 @@
     /*! \brief Query methods for real values
      *
      *  This function returns desired data about specified sensor channel based
-     *  on calibration key-file descriptor. The descriptor has to be already 
-     *  builded and not released.
+     *  on calibration key/value-file descriptor. The descriptor has to be built 
+     *  and not released.
      *
      *  \param  lfDesc      Calibration file descriptor
      *  \param  lfChannel   Sensor channel index
@@ -299,8 +299,8 @@
     /*! \brief Query methods for real values
      *
      *  This function returns desired data about specified sensor channel based
-     *  on calibration key-file descriptor. The descriptor has to be already 
-     *  builded and not released.
+     *  on calibration key/value-file descriptor. The descriptor has to be built 
+     *  and not released.
      *
      *  \param  lfDesc      Calibration file descriptor
      *  \param  lfChannel   Sensor channel index
@@ -313,8 +313,8 @@
     /*! \brief Query methods for real values
      *
      *  This function returns desired data about specified sensor channel based
-     *  on calibration key-file descriptor. The descriptor has to be already 
-     *  builded and not released.
+     *  on calibration key/value-file descriptor. The descriptor has to be built 
+     *  and not released.
      *
      *  \param  lfDesc      Calibration file descriptor
      *  \param  lfChannel   Sensor channel index
@@ -327,8 +327,8 @@
     /*! \brief Query methods for real values
      *
      *  This function returns desired data about specified sensor channel based
-     *  on calibration key-file descriptor. The descriptor has to be already 
-     *  builded and not released.
+     *  on calibration key/value-file descriptor. The descriptor has to be built 
+     *  and not released.
      *
      *  \param  lfDesc      Calibration file descriptor
      *  \param  lfChannel   Sensor channel index
@@ -341,8 +341,8 @@
     /*! \brief Query methods for real values
      *
      *  This function returns desired data about specified sensor channel based
-     *  on calibration key-file descriptor. The descriptor has to be already 
-     *  builded and not released.
+     *  on calibration key/value-file descriptor. The descriptor has to be built 
+     *  and not released.
      *
      *  \param  lfDesc      Calibration file descriptor
      *  \param  lfChannel   Sensor channel index
@@ -355,8 +355,8 @@
     /*! \brief Query methods for real values
      *
      *  This function returns desired data about specified sensor channel based
-     *  on calibration key-file descriptor. The descriptor has to be already 
-     *  builded and not released.
+     *  on calibration key/value-file descriptor. The descriptor has to be built 
+     *  and not released.
      *
      *  \param  lfDesc      Calibration file descriptor
      *  \param  lfChannel   Sensor channel index
@@ -369,8 +369,8 @@
     /*! \brief Query methods for real values
      *
      *  This function returns desired data about specified sensor channel based
-     *  on calibration key-file descriptor. The descriptor has to be already 
-     *  builded and not released.
+     *  on calibration key/value-file descriptor. The descriptor has to be built 
+     *  and not released.
      *
      *  \param  lfDesc      Calibration file descriptor
      *  \param  lfChannel   Sensor channel index
@@ -383,8 +383,8 @@
     /*! \brief \brief Query methods for real values
      *
      *  This function returns desired data about specified sensor channel based
-     *  on calibration key-file descriptor. The descriptor has to be already 
-     *  builded and not released.
+     *  on calibration key/value-file descriptor. The descriptor has to be built 
+     *  and not released.
      *
      *  \param  lfDesc      Calibration file descriptor
      *  \param  lfChannel   Sensor channel index

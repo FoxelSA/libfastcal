@@ -72,7 +72,7 @@
     # define LF_PARSE_VALUE lf_Enum_s( 1 )
     # define LF_PARSE_SKIP  lf_Enum_s( 2 )
 
-    /* Define key search flags */
+    /* Define keys search flags */
     # define LF_INVALID     lf_Size_s( -1 )
 
 /*
@@ -91,47 +91,47 @@
     Header - Function prototypes
  */
 
-    /*! \brief Key-file descriptor management
+    /*! \brief Key/value-file descriptor management
      *
-     *  This function is responsible for calibration key-file descriptor 
+     *  This function is responsible for calibration key/value-file descriptor 
      *  creation according to specified camera. The descriptor is needed for
-     *  queries on calibration values.
+     *  queries on calibration data values.
      *
-     *  The descriptor has to be empty because memory pointer carried by the
+     *  The descriptor has to be empty because memory pointers carried by the
      *  structure are erased by the function.
      *
      *  The function returns LF_FALSE if creation failed, LF_TRUE otherwise.
      *
      *  \param  lfMacAddress    Camera MAC address
      *  \param  lfMountPoint    Standard directory structure mount point
-     *  \param  lfDesc          Pointer to key-file descriptor
+     *  \param  lfDesc          Pointer to key/value-file descriptor
      *
      *  \return Returns key-file descriptor creation status 
      */
 
     lf_Enum_t lf_parse ( lf_Char_t * lfMacAddress, lf_Char_t * lfMountPoint, lf_Descriptor_t * lfDesc );
 
-    /*! \brief Key-file descriptor management
+    /*! \brief Key/value-file descriptor management
      *
      *  This function releases the allocated memory carried by the descriptor
      *  structure. It then should be called after descriptor creation and
      *  performed queries on calibration data.
      *
-     *  \param  lfDesc          Pointer to key-file descriptor
+     *  \param  lfDesc          Pointer to key/value-file descriptor
      */
 
     lf_Void_t lf_release ( lf_Descriptor_t * lfDesc );
 
-    /*! \brief Key-string searching algorithm
+    /*! \brief Keys-string searching algorithm
      * 
-     *  This function searches the provided key-string in the provided key-file
-     *  descriptor for corresponding value access.
+     *  This function searches the provided key-string in the key/value-file
+     *  descriptor for corresponding calibration data value access.
      *
      *  This function returns the mapping index of the found key-string on
      *  success and LF_INVALID if the key is not found.
      *
      *  \param  lfKey           String containing the key
-     *  \param  lfDesc          Pointer to key-file descriptor
+     *  \param  lfDesc          Pointer to key/value-file descriptor
      * 
      *  \return Returns descriptor mapping index where key-string is located
      */

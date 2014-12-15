@@ -44,7 +44,7 @@
     # include "fastcal-parser.h"
 
 /*
-    Source - Key-file descriptor management
+    Source - Key/value-file descriptor management
  */
 
     lf_Enum_t lf_parse( lf_Char_t * lfMacAddress, lf_Char_t * lfMountPoint, lf_Descriptor_t * lfDesc ) {
@@ -64,11 +64,11 @@
         /* Parsing variables */
         lf_Size_t lfParse = lf_Size_s( 0 );
 
-        /* Returned value variables */
-        lf_Enum_t lfReturn = LF_FALSE;
-
         /* Optimization variables */
         lf_Char_t * lfDirect = NULL;
+
+        /* Returned value variables */
+        lf_Enum_t lfReturn = LF_FALSE;
 
         /* Initialize structure */
         lfDesc->dsSize  = 0;
@@ -222,7 +222,7 @@
     }
 
 /*
-    Source - Key-string searching algorithm
+    Source - Keys-string searching algorithm
  */
 
     lf_Size_t lf_key( lf_Char_t const * const lfKey, lf_Descriptor_t const * const lfDesc ) {

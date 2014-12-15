@@ -36,10 +36,10 @@
  *      Attribution" section of <http://foxel.ch/license>.
  */
 
-    /*! \file   fastcal-query.h
+    /*! \brief \file   fastcal-query.h
      *  \author Nils Hamel <n.hamel@foxel.ch>
      *
-     *  Principal calibration data server
+     *  Fast calibration data access
      */
 
 /*
@@ -84,95 +84,313 @@
     Header - Function prototypes
  */
 
-    /*! ... */
+    /*! \brief Query methods for strings
+     *
+     *  This function returns desired data based on the calibration key-file
+     *  descriptor. The descriptor has to be already builded and not released.
+     *
+     *  \param  lfDesc      Calibration file descriptor
+     *
+     *  \return Queried calibration value
+     */
 
     lf_Char_t * lf_query_camera ( lf_Descriptor_t const * const lfDesc );
 
-    /*! ... */
+    /*! \brief Query methods for strings
+     *
+     *  This function returns desired data based on the calibration key-file
+     *  descriptor. The descriptor has to be already builded and not released.
+     *
+     *  \param  lfDesc      Calibration file descriptor
+     *
+     *  \return Queried calibration value
+     */
 
     lf_Char_t * lf_query_model ( lf_Descriptor_t const * const lfDesc );
 
-    /*! ... */
+    /*! \brief Query methods for strings
+     *
+     *  This function returns desired data on the base of the calibration file
+     *  descriptor. The descriptor has to be already builded and not released.
+     *
+     *  \param  lfDesc      Calibration file descriptor
+     *
+     *  \return Queried calibration value
+     */
 
     lf_Char_t * lf_query_imu ( lf_Descriptor_t const * const lfDesc );
 
-    /*! ... */
+    /*! \brief Query methods for strings
+     *
+     *  This function returns desired data based on the calibration key-file
+     *  descriptor. The descriptor has to be already builded and not released.
+     *
+     *  \param  lfDesc      Calibration file descriptor
+     *
+     *  \return Queried calibration value
+     */
 
     lf_Char_t * lf_query_gps ( lf_Descriptor_t const * const lfDesc );
 
-    /*! ... */
+    /*! \brief Query methods for strings
+     *
+     *  This function returns desired data based on the calibration key-file
+     *  descriptor. The descriptor has to be already builded and not released.
+     *
+     *  \param  lfDesc      Calibration file descriptor
+     *
+     *  \return Queried calibration value
+     */
 
     lf_Size_t lf_query_modules ( lf_Descriptor_t const * const lfDesc );
 
-    /*! ... */
+    /*! \brief Query methods for strings
+     *
+     *  This function returns desired data based on the calibration key-file
+     *  descriptor. The descriptor has to be already builded and not released.
+     *
+     *  \param  lfDesc      Calibration file descriptor
+     *
+     *  \return Queried calibration value
+     */
 
     lf_Size_t lf_query_channels ( lf_Descriptor_t const * const lfDesc );
 
-    /*! ... */
+    /*! \brief Query methods for integer values
+     *
+     *  This function returns desired data about specified sensor channel based
+     *  on calibration key-file descriptor. The descriptor has to be already 
+     *  builded and not released.
+     *
+     *  \param  lfDesc      Calibration file descriptor
+     *  \param  lfChannel   Sensor channel index
+     *
+     *  \return Queried calibration value
+     */
 
     lf_Size_t lf_query_ImageFullWidth ( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc );
 
-    /*! ... */
+    /*! \brief Query methods for integer values
+     *
+     *  This function returns desired data about specified sensor channel based
+     *  on calibration key-file descriptor. The descriptor has to be already 
+     *  builded and not released.
+     *
+     *  \param  lfDesc      Calibration file descriptor
+     *  \param  lfChannel   Sensor channel index
+     *
+     *  \return Queried calibration value
+     */
 
     lf_Size_t lf_query_ImageFullLength( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc );
 
-    /*! ... */
+    /*! \brief Query methods for integer values
+     *
+     *  This function returns desired data about specified sensor channel based
+     *  on calibration key-file descriptor. The descriptor has to be already 
+     *  builded and not released.
+     *
+     *  \param  lfDesc      Calibration file descriptor
+     *  \param  lfChannel   Sensor channel index
+     *
+     *  \return Queried calibration value
+     */
 
     lf_Size_t lf_query_XPosition ( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc );
 
-    /*! ... */
+    /*! \brief Query methods for integer values
+     *
+     *  This function returns desired data about specified sensor channel based
+     *  on calibration key-file descriptor. The descriptor has to be already 
+     *  builded and not released.
+     *
+     *  \param  lfDesc      Calibration file descriptor
+     *  \param  lfChannel   Sensor channel index
+     *
+     *  \return Queried calibration value
+     */
 
     lf_Size_t lf_query_YPosition ( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc );
 
-    /*! ... */
+    /*! \brief Query methods for integer values
+     *
+     *  This function returns desired data about specified sensor channel based
+     *  on calibration key-file descriptor. The descriptor has to be already 
+     *  builded and not released.
+     *
+     *  \param  lfDesc      Calibration file descriptor
+     *  \param  lfChannel   Sensor channel index
+     *
+     *  \return Queried calibration value
+     */
 
     lf_Size_t lf_query_pixelCorrectionWidth ( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc );
 
-    /*! ... */
+    /*! \brief Query methods for integer values
+     *
+     *  This function returns desired data about specified sensor channel based
+     *  on calibration key-file descriptor. The descriptor has to be already 
+     *  builded and not released.
+     *
+     *  \param  lfDesc      Calibration file descriptor
+     *  \param  lfChannel   Sensor channel index
+     *
+     *  \return Queried calibration value
+     */
 
     lf_Size_t lf_query_pixelCorrectionHeight ( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc );
 
-    /*! ... */
+    /*! \brief Query methods for real values
+     *
+     *  This function returns desired data about specified sensor channel based
+     *  on calibration key-file descriptor. The descriptor has to be already 
+     *  builded and not released.
+     *
+     *  \param  lfDesc      Calibration file descriptor
+     *  \param  lfChannel   Sensor channel index
+     *
+     *  \return Queried calibration value
+     */
 
     lf_Real_t lf_query_focalLength ( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc );
 
-    /*! ... */
+    /*! \brief Query methods for real values
+     *
+     *  This function returns desired data about specified sensor channel based
+     *  on calibration key-file descriptor. The descriptor has to be already 
+     *  builded and not released.
+     *
+     *  \param  lfDesc      Calibration file descriptor
+     *  \param  lfChannel   Sensor channel index
+     *
+     *  \return Queried calibration value
+     */
 
     lf_Real_t lf_query_azimuth ( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc );
 
-    /*! ... */
+    /*! \brief Query methods for real values
+     *
+     *  This function returns desired data about specified sensor channel based
+     *  on calibration key-file descriptor. The descriptor has to be already 
+     *  builded and not released.
+     *
+     *  \param  lfDesc      Calibration file descriptor
+     *  \param  lfChannel   Sensor channel index
+     *
+     *  \return Queried calibration value
+     */
 
     lf_Real_t lf_query_elevation ( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc );
 
-    /*! ... */
+    /*! \brief Query methods for real values
+     *
+     *  This function returns desired data about specified sensor channel based
+     *  on calibration key-file descriptor. The descriptor has to be already 
+     *  builded and not released.
+     *
+     *  \param  lfDesc      Calibration file descriptor
+     *  \param  lfChannel   Sensor channel index
+     *
+     *  \return Queried calibration value
+     */
 
     lf_Real_t lf_query_heading ( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc );
 
-    /*! ... */
+    /*! \brief Query methods for real values
+     *
+     *  This function returns desired data about specified sensor channel based
+     *  on calibration key-file descriptor. The descriptor has to be already 
+     *  builded and not released.
+     *
+     *  \param  lfDesc      Calibration file descriptor
+     *  \param  lfChannel   Sensor channel index
+     *
+     *  \return Queried calibration value
+     */
 
     lf_Real_t lf_query_pixelSize ( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc );
 
-    /*! ... */
+    /*! \brief Query methods for real values
+     *
+     *  This function returns desired data about specified sensor channel based
+     *  on calibration key-file descriptor. The descriptor has to be already 
+     *  builded and not released.
+     *
+     *  \param  lfDesc      Calibration file descriptor
+     *  \param  lfChannel   Sensor channel index
+     *
+     *  \return Queried calibration value
+     */
 
     lf_Real_t lf_query_px0( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc );
 
-    /*! ... */
+    /*! \brief Query methods for real values
+     *
+     *  This function returns desired data about specified sensor channel based
+     *  on calibration key-file descriptor. The descriptor has to be already 
+     *  builded and not released.
+     *
+     *  \param  lfDesc      Calibration file descriptor
+     *  \param  lfChannel   Sensor channel index
+     *
+     *  \return Queried calibration value
+     */
 
     lf_Real_t lf_query_py0( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc );
 
-    /*! ... */
+    /*! \brief Query methods for real values
+     *
+     *  This function returns desired data about specified sensor channel based
+     *  on calibration key-file descriptor. The descriptor has to be already 
+     *  builded and not released.
+     *
+     *  \param  lfDesc      Calibration file descriptor
+     *  \param  lfChannel   Sensor channel index
+     *
+     *  \return Queried calibration value
+     */
 
     lf_Real_t lf_query_roll( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc );
 
-    /*! ... */
+    /*! \brief Query methods for real values
+     *
+     *  This function returns desired data about specified sensor channel based
+     *  on calibration key-file descriptor. The descriptor has to be already 
+     *  builded and not released.
+     *
+     *  \param  lfDesc      Calibration file descriptor
+     *  \param  lfChannel   Sensor channel index
+     *
+     *  \return Queried calibration value
+     */
 
     lf_Real_t lf_query_radius ( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc );
 
-    /*! ... */
+    /*! \brief Query methods for real values
+     *
+     *  This function returns desired data about specified sensor channel based
+     *  on calibration key-file descriptor. The descriptor has to be already 
+     *  builded and not released.
+     *
+     *  \param  lfDesc      Calibration file descriptor
+     *  \param  lfChannel   Sensor channel index
+     *
+     *  \return Queried calibration value
+     */
 
     lf_Real_t lf_query_height ( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc );
 
-    /*! ... */
+    /*! \brief \brief Query methods for real values
+     *
+     *  This function returns desired data about specified sensor channel based
+     *  on calibration key-file descriptor. The descriptor has to be already 
+     *  builded and not released.
+     *
+     *  \param  lfDesc      Calibration file descriptor
+     *  \param  lfChannel   Sensor channel index
+     *
+     *  \return Queried calibration value
+     */
 
     lf_Real_t lf_query_entrancePupilForward ( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc );
 

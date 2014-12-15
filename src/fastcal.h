@@ -165,6 +165,22 @@
     Header - Structures
  */
 
+    /*! \struct lf_Descriptor_struct
+     *  \brief Key-file descriptor
+     *
+     *  This structure stores needed information to provide a fast access to
+     *  calibration data contained in the considered key/value-file.
+     *
+     *  \var lf_Descriptor_struct::dsSize
+     *  Size, in bytes, of the key-file
+     *  \var lf_Descriptor_struct::dsData
+     *  Key-file content storage memory
+     *  \var lf_Descriptor_struct::dsMap
+     *  Key and value offset mapping in key-file content
+     *  \var lf_Descriptor_struct::dsCount
+     *  Mapping size, in key and value units
+     */ 
+
     typedef struct lf_Descriptor_struct {
 
         /* Data buffer */

@@ -44,7 +44,7 @@
     # include "fastcal-query.h"
 
 /*
-    Source - Query methods (Strings)
+    Source - Query methods for strings
  */
 
     lf_Char_t * lf_query_camera( lf_Descriptor_t const * const lfDesc ) {
@@ -156,7 +156,7 @@
     }
 
 /*
-    Source - Query methods (Integers)
+    Source - Query methods for integer values
  */
 
     lf_Size_t lf_query_modules( lf_Descriptor_t const * const lfDesc ) {
@@ -400,7 +400,7 @@
     }
 
 /*
-    Source - Query methods (Reals)
+    Source - Query methods for real values
  */
 
     lf_Real_t lf_query_focalLength( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc ) {

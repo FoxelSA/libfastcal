@@ -46,8 +46,8 @@
     Header - Include guard
  */
 
-    # ifndef __LF_IMPORT__
-    # define __LF_IMPORT__
+    # ifndef __LF_PARSER__
+    # define __LF_PARSER__
 
 /*
     Header - C/C++ compatibility
@@ -74,7 +74,6 @@
 
     /* Define key search flags */
     # define LF_INVALID     lf_Size_s( -1 )
-    
 
 /*
     Header - Preprocessor macros
@@ -92,15 +91,50 @@
     Header - Function prototypes
  */
 
-    /*! ...*/
+    /*! \brief Key-file descriptor management
+     *
+     *  This function is responsible for calibration key-file descriptor 
+     *  creation according to specified camera. The descriptor is needed for
+     *  queries on calibration values.
+     *
+     *  The descriptor has to be empty because memory pointer carried by the
+     *  structure are erased by the function.
+     *
+     *  The function returns LF_FALSE if creation failed, LF_TRUE otherwise.
+     *
+     *  \param  lfMacAddress    Camera MAC address
+     *  \param  lfMountPoint    Standard directory structure mount point
+     *  \param  lfDesc          Pointer to key-file descriptor
+     *
+     *  \return Returns key-file descriptor creation status 
+     */
 
     lf_Enum_t lf_parse ( lf_Char_t * lfMacAddress, lf_Char_t * lfMountPoint, lf_Descriptor_t * lfDesc );
 
-    /*! ...*/
+    /*! \brief Key-file descriptor management
+     *
+     *  This function releases the allocated memory carried by the descriptor
+     *  structure. It then should be called after descriptor creation and
+     *  performed queries on calibration data.
+     *
+     *  \param  lfDesc          Pointer to key-file descriptor
+     */
 
     lf_Void_t lf_release ( lf_Descriptor_t * lfDesc );
 
-    /*! ...*/
+    /*! \brief Key-string searching algorithm
+     * 
+     *  This function searches the provided key-string in the provided key-file
+     *  descriptor for corresponding value access.
+     *
+     *  This function returns the mapping index of the found key-string on
+     *  success and LF_INVALID if the key is not found.
+     *
+     *  \param  lfKey           String containing the key
+     *  \param  lfDesc          Pointer to key-file descriptor
+     * 
+     *  \return Returns descriptor mapping index where key-string is located
+     */
 
     lf_Size_t lf_key ( lf_Char_t const * const lfKey, lf_Descriptor_t const * const lfDesc );
 

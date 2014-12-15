@@ -44,7 +44,7 @@
     # include "fastcal-parser.h"
 
 /*
-    Source - Descriptor creator
+    Source - Key-file descriptor management
  */
 
     lf_Enum_t lf_parse( lf_Char_t * lfMacAddress, lf_Char_t * lfMountPoint, lf_Descriptor_t * lfDesc ) {
@@ -222,7 +222,7 @@
     }
 
 /*
-    Source - Key searching
+    Source - Key-string searching algorithm
  */
 
     lf_Size_t lf_key( lf_Char_t const * const lfKey, lf_Descriptor_t const * const lfDesc ) {

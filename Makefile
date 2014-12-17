@@ -13,6 +13,7 @@
     MAKE_OBJECT:=obj
     MAKE_SOURCE:=src
     MAKE_INPATH:=/usr/lib
+    MAKE_HDPATH:=/usr/include
     MAKE_CMCOPY:=cp
     MAKE_CMRMFL:=rm -f
     MAKE_CMRMDR:=rm -rf
@@ -39,53 +40,55 @@
 ifeq ($(CONFIG_TYPE),suite)
     MAKE_LIBSWAP:=../../
 else
-ifeq ($(CONFIG_TYPE),libcommon)
-    MAKE_LIBSWAP:=../../
-else
-    MAKE_LIBSWAP:=
+    ifeq ($(CONFIG_TYPE),libcommon)
+        MAKE_LIBSWAP:=../../
+    else
+        MAKE_LIBSWAP:=
+    endif
 endif
-endif
+
 ifeq ($(CONFIG_TYPE),libstatic)
     MAKE_SUFFIX:=.a
 else
-ifeq ($(CONFIG_TYPE),libcommon)
-    MAKE_SUFFIX:=.a
-else
-    MAKE_SUFFIX:=
+    ifeq ($(CONFIG_TYPE),libcommon)
+        MAKE_SUFFIX:=.a
+    else
+        MAKE_SUFFIX:=
+    endif
 endif
-endif
+
 ifeq ($(CONFIG_CODE),c)
-ifeq ($(CONFIG_TYPE),libstatic)
-    MAKE_LINKER:=$(MAKE_STABLD)
-else
-ifeq ($(CONFIG_TYPE),libcommon)
-    MAKE_LINKER:=$(MAKE_STABLD)
-else
-    MAKE_LINKER:=$(MAKE_CC_BLD)
-endif
-endif
+    ifeq ($(CONFIG_TYPE),libstatic)
+        MAKE_LINKER:=$(MAKE_STABLD)
+    else
+        ifeq ($(CONFIG_TYPE),libcommon)
+            MAKE_LINKER:=$(MAKE_STABLD)
+        else
+            MAKE_LINKER:=$(MAKE_CC_BLD)
+        endif
+    endif
+    MAKE_HEADEX:=h
     MAKE_COMPIL:=$(MAKE_CC_BLD)
-endif
-ifeq ($(CONFIG_CODE),cpp)
-ifeq ($(CONFIG_TYPE),libstatic)
-    MAKE_LINKER:=$(MAKE_STABLD)
-else
-ifeq ($(CONFIG_TYPE),libcommon)
-    MAKE_LINKER:=$(MAKE_STABLD)
-else
-    MAKE_LINKER:=$(MAKE_CPPBLD)
-endif
-endif
-    MAKE_COMPIL:=$(MAKE_CPPBLD)
-endif
-    MAKE_OPTION:=$(BUILD_FLAGS) $(addprefix -I./$(MAKE_LIBSWAP), $(addsuffix /src, $(BUILD_SUBMD) ) )
-ifeq ($(CONFIG_CODE),c)
     MAKE_OPTION:=$(MAKE_OPTION) -std=gnu99
-else
+endif
+
 ifeq ($(CONFIG_CODE),cpp)
+    ifeq ($(CONFIG_TYPE),libstatic)
+        MAKE_LINKER:=$(MAKE_STABLD)
+    else
+        ifeq ($(CONFIG_TYPE),libcommon)
+            MAKE_LINKER:=$(MAKE_STABLD)
+        else
+            MAKE_LINKER:=$(MAKE_CPPBLD)
+        endif
+    endif
+    MAKE_HEADEX:=hpp
+    MAKE_COMPIL:=$(MAKE_CPPBLD)
     MAKE_OPTION:=$(MAKE_OPTION) -std=c++11
 endif
-endif
+
+    MAKE_OPTION:=$(BUILD_FLAGS) $(addprefix -I./$(MAKE_LIBSWAP), $(addsuffix /src, $(BUILD_SUBMD) ) )
+
 ifneq ($(OPENMP),false)
     MAKE_OPTION:=$(MAKE_OPTION) -fopenmp -D __OPENMP__
     BUILD_LINKD:=$(BUILD_LINKD) -lgomp
@@ -175,9 +178,15 @@ endif
 
     make-install:
 	$(MAKE_CMCOPY) $(MAKE_BINARY)/$(CONFIG_NAME)$(MAKE_SUFFIX) $(MAKE_INPATH)/$(CONFIG_NAME)$(MAKE_SUFFIX)
+ifeq ($(CONFIG_TYPE),libstatic)
+	$(MAKE_CMCOPY) $(addprefix $(MAKE_SOURCE)/, $(notdir $(wildcard $(MAKE_SOURCE)/*.$(MAKE_HEADEX) ) ) ) $(MAKE_HDPATH)
+endif
 
     make-uninstall:
 	$(MAKE_CMRMFL) $(MAKE_INPATH)/$(CONFIG_NAME)$(MAKE_SUFFIX)
+ifeq ($(CONFIG_TYPE),libstatic)
+	$(MAKE_CMRMFL) $(addprefix $(MAKE_HDPATH)/, $(notdir $(wildcard $(MAKE_SOURCE)/*.$(MAKE_HEADEX) ) ) )
+endif
 
 #
 #   make - Directories

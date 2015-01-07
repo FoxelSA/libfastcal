@@ -1,5 +1,9 @@
 ## Changelog
 
+### Release 1.1.1 (January 7, 2015)
+
+- `Fixed` : Library function prototypes improving C/C++ compatibility
+
 ### Release 1.1 (December 18, 2014)
 
 - `Added` : Static and shared library building option

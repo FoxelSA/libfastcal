@@ -1,7 +1,7 @@
 /*
  * libfastcal - Fast calibration data access
  *
- * Copyright (c) 2013-2014 FOXEL SA - http://foxel.ch
+ * Copyright (c) 2013-2015 FOXEL SA - http://foxel.ch
  * Please read <http://foxel.ch/license> for more information.
  *
  *

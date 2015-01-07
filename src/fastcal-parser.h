@@ -109,7 +109,7 @@
      *  \return Returns key-file descriptor creation status 
      */
 
-    lf_Enum_t lf_parse ( lf_Char_t * lfMacAddress, lf_Char_t * lfMountPoint, lf_Descriptor_t * lfDesc );
+    lf_Enum_t lf_parse( lf_Char_t const * const lfMacAddress, lf_Char_t const * const lfMountPoint, lf_Descriptor_t * const lfDesc );
 
     /*! \brief Key/value-file descriptor management
      *
@@ -120,7 +120,7 @@
      *  \param  lfDesc          Pointer to key/value-file descriptor
      */
 
-    lf_Void_t lf_release ( lf_Descriptor_t * lfDesc );
+    lf_Void_t lf_release( lf_Descriptor_t * const lfDesc );
 
     /*! \brief Keys-string searching algorithm
      * 

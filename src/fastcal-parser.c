@@ -47,7 +47,7 @@
     Source - Key/value-file descriptor management
  */
 
-    lf_Enum_t lf_parse( lf_Char_t * lfMacAddress, lf_Char_t * lfMountPoint, lf_Descriptor_t * lfDesc ) {
+    lf_Enum_t lf_parse( lf_Char_t const * const lfMacAddress, lf_Char_t const * const lfMountPoint, lf_Descriptor_t * const lfDesc ) {
 
         /* Path variables */
         lf_Char_t lfPath[256] = { lf_Char_s( 0 ) };
@@ -195,7 +195,7 @@
     Source - Descriptor release
  */
 
-    lf_Void_t lf_release( lf_Descriptor_t * lfDesc ) {
+    lf_Void_t lf_release( lf_Descriptor_t * const lfDesc ) {
 
         /* Check memory allocation */
         if ( lfDesc->dsMap != NULL ) {

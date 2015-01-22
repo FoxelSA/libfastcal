@@ -1,5 +1,9 @@
 ## Changelog
 
+### Release 1.1.2 (January 22, 2015)
+
+- `Fixed` : Version consistency for shared library compilation
+
 ### Release 1.1.1 (January 7, 2015)
 
 - `Fixed` : Library function prototypes improving C/C++ compatibility

@@ -1,5 +1,9 @@
 ## Changelog
 
+### Release 1.1.3 (February 4, 2015)
+
+- `Revised` : Adaptation to standard directory structure improvement
+
 ### Release 1.1.2 (January 22, 2015)
 
 - `Fixed` : Version consistency for shared library compilation

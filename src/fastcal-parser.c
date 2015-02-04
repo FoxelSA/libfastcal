@@ -77,7 +77,7 @@
         lfDesc->dsMap   = NULL;
 
         /* Create calibration file path */
-        sprintf( ( char * ) lfPath, "%s/camera/%s/info/fastcal/calibration.key", lfMountPoint, lfMacAddress );
+        sprintf( ( char * ) lfPath, "%s/camera/%s/fastcal/calibration.key", lfMountPoint, lfMacAddress );
 
         /* Create stream handle */
         if ( ( lfStream = fopen( ( char * ) lfPath, "rb" ) ) != NULL ) {

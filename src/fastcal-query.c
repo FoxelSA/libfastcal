@@ -426,6 +426,37 @@
 
     }
 
+    lf_Size_t lf_query_hflip( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc ) {
+
+        /* Calibration data cache variables */
+        static lf_Size_t lfvCache[LF_CACHE] = { lf_Size_s( 0 ) };
+
+        /* Cache descritor variables */
+        static lf_Enum_t lfdCache[LF_CACHE] = { LF_FALSE };
+
+        /* Key string variables */
+        static lf_Char_t lfKey[] = "hflip_--";
+
+        /* Cache detection */
+        if ( lfdCache[lfChannel] == LF_FALSE ) {
+
+            /* Construct key string */
+            lfKey[6] = LF_UTF8_ZERO + ( lfChannel / lf_Size_s( 10 ) );
+            lfKey[7] = LF_UTF8_ZERO + ( lfChannel % lf_Size_s( 10 ) );
+
+            /* Query value */
+            lfvCache[lfChannel] = lf_Size_str( ( char * ) lfDesc->dsMap[lf_key( lfKey, lfDesc ) + 1] );
+
+            /* Update cache state */
+            lfdCache[lfChannel] = LF_TRUE;
+
+        }
+
+        /* Return cached value */
+        return( lfvCache[lfChannel] );
+
+    }
+
 /*
     Source - Query methods for real values
  */

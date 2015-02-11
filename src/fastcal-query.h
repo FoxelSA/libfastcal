@@ -266,6 +266,20 @@
 
     lf_Size_t lf_query_hflip( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc );
 
+    /*! \brief Query methods for integer values
+     *
+     *  This function returns desired data about specified sensor channel based
+     *  on calibration key/value-file descriptor. The descriptor has to be built 
+     *  and not released.
+     *
+     *  \param  lfDesc      Calibration file descriptor
+     *  \param  lfChannel   Sensor channel index
+     *
+     *  \return Queried calibration value
+     */
+
+    lf_Size_t lf_query_vflip( lf_Size_t const lfChannel, lf_Descriptor_t const * const lfDesc );
+
     /*! \brief Query methods for real values
      *
      *  This function returns desired data about specified sensor channel based

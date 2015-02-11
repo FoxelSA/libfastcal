@@ -1,6 +1,6 @@
 ## Changelog
 
-### Beta 1.2 (February 11, 2015)
+### Release 1.2 (February 11, 2015)
 
 - `Added` : Camera type key access method
 - `Added` : Camera horizontal flip key access method

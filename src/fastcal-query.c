@@ -74,6 +74,33 @@
 
     }
 
+    lf_Char_t * lf_query_type( lf_Descriptor_t const * const lfDesc ) {
+
+        /* Calibration data cache variables */
+        static lf_Char_t * lfvCache = lf_Char_s( 0 );
+
+        /* Cache descritor variables */
+        static lf_Enum_t   lfdCache = LF_FALSE;
+
+        /* Key string variables */
+        static lf_Char_t   lfKey[] = "type";
+
+        /* Cache detection */
+        if ( lfdCache == LF_FALSE ) {
+
+            /* Query value */
+            lfvCache = lfDesc->dsMap[lf_key( lfKey, lfDesc ) + 1];
+
+            /* Update cache state */
+            lfdCache = LF_TRUE;
+
+        }
+
+        /* Return cached value */
+        return( lfvCache );
+
+    }
+
     lf_Char_t * lf_query_model( lf_Descriptor_t const * const lfDesc ) {
 
         /* Calibration data cache variables */

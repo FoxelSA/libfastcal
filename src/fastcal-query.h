@@ -106,6 +106,18 @@
      *  \return Queried calibration value
      */
 
+    lf_Char_t * lf_query_type( lf_Descriptor_t const * const lfDesc );
+
+    /*! \brief Query methods for strings
+     *
+     *  This function returns desired data based on calibration key/value-file
+     *  descriptor. The descriptor has to be already built and not released.
+     *
+     *  \param  lfDesc      Calibration file descriptor
+     *
+     *  \return Queried calibration value
+     */
+
     lf_Char_t * lf_query_model ( lf_Descriptor_t const * const lfDesc );
 
     /*! \brief Query methods for strings

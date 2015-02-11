@@ -1,5 +1,11 @@
 ## Changelog
 
+### Beta 1.2 (February 11, 2015)
+
+- `Added` : Camera type key access method
+- `Added` : Camera horizontal flip key access method
+- `Added` : Camera vertical flip key access method
+
 ### Release 1.1.3 (February 4, 2015)
 
 - `Revised` : Adaptation to standard directory structure improvement

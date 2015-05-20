@@ -52,7 +52,7 @@
         /* Calibration data cache variables */
         static lf_Char_t * lfvCache = lf_Char_s( 0 );
 
-        /* Cache descritor variables */
+        /* Cache descriptor variables */
         static lf_Enum_t   lfdCache = LF_FALSE;
 
         /* Key string variables */
@@ -79,7 +79,7 @@
         /* Calibration data cache variables */
         static lf_Char_t * lfvCache = lf_Char_s( 0 );
 
-        /* Cache descritor variables */
+        /* Cache descriptor variables */
         static lf_Enum_t   lfdCache = LF_FALSE;
 
         /* Key string variables */
@@ -106,7 +106,7 @@
         /* Calibration data cache variables */
         static lf_Char_t * lfvCache = lf_Char_s( 0 );
 
-        /* Cache descritor variables */
+        /* Cache descriptor variables */
         static lf_Enum_t   lfdCache = LF_FALSE;
 
         /* Key string variables */
@@ -133,7 +133,7 @@
         /* Calibration data cache variables */
         static lf_Char_t * lfvCache = lf_Char_s( 0 );
 
-        /* Cache descritor variables */
+        /* Cache descriptor variables */
         static lf_Enum_t   lfdCache = LF_FALSE;
 
         /* Key string variables */
@@ -160,7 +160,7 @@
         /* Calibration data cache variables */
         static lf_Char_t * lfvCache = lf_Char_s( 0 );
 
-        /* Cache descritor variables */
+        /* Cache descriptor variables */
         static lf_Enum_t   lfdCache = LF_FALSE;
 
         /* Key string variables */
@@ -191,7 +191,7 @@
         /* Calibration data cache variables */
         static lf_Size_t lfvCache = lf_Size_s( 0 );
 
-        /* Cache descritor variables */
+        /* Cache descriptor variables */
         static lf_Enum_t lfdCache = LF_FALSE;
 
         /* Key string variables */
@@ -218,7 +218,7 @@
         /* Calibration data cache variables */
         static lf_Size_t lfvCache = lf_Size_s( 0 );
 
-        /* Cache descritor variables */
+        /* Cache descriptor variables */
         static lf_Enum_t lfdCache = LF_FALSE;
 
         /* Key string variables */
@@ -245,7 +245,7 @@
         /* Calibration data cache variables */
         static lf_Size_t lfvCache[LF_CACHE] = { lf_Size_s( 0 ) };
 
-        /* Cache descritor variables */
+        /* Cache descriptor variables */
         static lf_Enum_t lfdCache[LF_CACHE] = { LF_FALSE };
 
         /* Key string variables */
@@ -276,7 +276,7 @@
         /* Calibration data cache variables */
         static lf_Size_t lfvCache[LF_CACHE] = { lf_Size_s( 0 ) };
 
-        /* Cache descritor variables */
+        /* Cache descriptor variables */
         static lf_Enum_t lfdCache[LF_CACHE] = { LF_FALSE };
 
         /* Key string variables */
@@ -307,7 +307,7 @@
         /* Calibration data cache variables */
         static lf_Size_t lfvCache[LF_CACHE] = { lf_Size_s( 0 ) };
 
-        /* Cache descritor variables */
+        /* Cache descriptor variables */
         static lf_Enum_t lfdCache[LF_CACHE] = { LF_FALSE };
 
         /* Key string variables */
@@ -338,7 +338,7 @@
         /* Calibration data cache variables */
         static lf_Size_t lfvCache[LF_CACHE] = { lf_Size_s( 0 ) };
 
-        /* Cache descritor variables */
+        /* Cache descriptor variables */
         static lf_Enum_t lfdCache[LF_CACHE] = { LF_FALSE };
 
         /* Key string variables */
@@ -369,7 +369,7 @@
         /* Calibration data cache variables */
         static lf_Size_t lfvCache[LF_CACHE] = { lf_Size_s( 0 ) };
 
-        /* Cache descritor variables */
+        /* Cache descriptor variables */
         static lf_Enum_t lfdCache[LF_CACHE] = { LF_FALSE };
 
         /* Key string variables */
@@ -400,7 +400,7 @@
         /* Calibration data cache variables */
         static lf_Size_t lfvCache[LF_CACHE] = { lf_Size_s( 0 ) };
 
-        /* Cache descritor variables */
+        /* Cache descriptor variables */
         static lf_Enum_t lfdCache[LF_CACHE] = { LF_FALSE };
 
         /* Key string variables */
@@ -431,7 +431,7 @@
         /* Calibration data cache variables */
         static lf_Size_t lfvCache[LF_CACHE] = { lf_Size_s( 0 ) };
 
-        /* Cache descritor variables */
+        /* Cache descriptor variables */
         static lf_Enum_t lfdCache[LF_CACHE] = { LF_FALSE };
 
         /* Key string variables */
@@ -462,7 +462,7 @@
         /* Calibration data cache variables */
         static lf_Size_t lfvCache[LF_CACHE] = { lf_Size_s( 0 ) };
 
-        /* Cache descritor variables */
+        /* Cache descriptor variables */
         static lf_Enum_t lfdCache[LF_CACHE] = { LF_FALSE };
 
         /* Key string variables */
@@ -497,7 +497,7 @@
         /* Calibration data cache variables */
         static lf_Real_t lfvCache[LF_CACHE] = { lf_Real_s( 0.0 ) };
 
-        /* Cache descritor variables */
+        /* Cache descriptor variables */
         static lf_Enum_t lfdCache[LF_CACHE] = { LF_FALSE };
 
         /* Key string variables */
@@ -528,7 +528,7 @@
         /* Calibration data cache variables */
         static lf_Real_t lfvCache[LF_CACHE] = { lf_Real_s( 0.0 ) };
 
-        /* Cache descritor variables */
+        /* Cache descriptor variables */
         static lf_Enum_t lfdCache[LF_CACHE] = { LF_FALSE };
 
         /* Key string variables */
@@ -559,7 +559,7 @@
         /* Calibration data cache variables */
         static lf_Real_t lfvCache[LF_CACHE] = { lf_Real_s( 0.0 ) };
 
-        /* Cache descritor variables */
+        /* Cache descriptor variables */
         static lf_Enum_t lfdCache[LF_CACHE] = { LF_FALSE };
 
         /* Key string variables */
@@ -590,7 +590,7 @@
         /* Calibration data cache variables */
         static lf_Real_t lfvCache[LF_CACHE] = { lf_Real_s( 0.0 ) };
 
-        /* Cache descritor variables */
+        /* Cache descriptor variables */
         static lf_Enum_t lfdCache[LF_CACHE] = { LF_FALSE };
 
         /* Key string variables */
@@ -621,7 +621,7 @@
         /* Calibration data cache variables */
         static lf_Real_t lfvCache[LF_CACHE] = { lf_Real_s( 0.0 ) };
 
-        /* Cache descritor variables */
+        /* Cache descriptor variables */
         static lf_Enum_t lfdCache[LF_CACHE] = { LF_FALSE };
 
         /* Key string variables */
@@ -652,7 +652,7 @@
         /* Calibration data cache variables */
         static lf_Real_t lfvCache[LF_CACHE] = { lf_Real_s( 0.0 ) };
 
-        /* Cache descritor variables */
+        /* Cache descriptor variables */
         static lf_Enum_t lfdCache[LF_CACHE] = { LF_FALSE };
 
         /* Key string variables */
@@ -683,7 +683,7 @@
         /* Calibration data cache variables */
         static lf_Real_t lfvCache[LF_CACHE] = { lf_Real_s( 0.0 ) };
 
-        /* Cache descritor variables */
+        /* Cache descriptor variables */
         static lf_Enum_t lfdCache[LF_CACHE] = { LF_FALSE };
 
         /* Key string variables */
@@ -714,7 +714,7 @@
         /* Calibration data cache variables */
         static lf_Real_t lfvCache[LF_CACHE] = { lf_Real_s( 0.0 ) };
 
-        /* Cache descritor variables */
+        /* Cache descriptor variables */
         static lf_Enum_t lfdCache[LF_CACHE] = { LF_FALSE };
 
         /* Key string variables */
@@ -745,7 +745,7 @@
         /* Calibration data cache variables */
         static lf_Real_t lfvCache[LF_CACHE] = { lf_Real_s( 0.0 ) };
 
-        /* Cache descritor variables */
+        /* Cache descriptor variables */
         static lf_Enum_t lfdCache[LF_CACHE] = { LF_FALSE };
 
         /* Key string variables */
@@ -776,7 +776,7 @@
         /* Calibration data cache variables */
         static lf_Real_t lfvCache[LF_CACHE] = { lf_Real_s( 0.0 ) };
 
-        /* Cache descritor variables */
+        /* Cache descriptor variables */
         static lf_Enum_t lfdCache[LF_CACHE] = { LF_FALSE };
 
         /* Key string variables */
@@ -807,7 +807,7 @@
         /* Calibration data cache variables */
         static lf_Real_t lfvCache[LF_CACHE] = { lf_Real_s( 0.0 ) };
 
-        /* Cache descritor variables */
+        /* Cache descriptor variables */
         static lf_Enum_t lfdCache[LF_CACHE] = { LF_FALSE };
 
         /* Key string variables */

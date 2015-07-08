@@ -8,7 +8,7 @@ The libfastcal library provides camera calibration data access in the fastest an
 ### Documentation
 
 <p align="justify">
-A detailed documentation can be generated through doxygen. A more general documentation can be consulted on the [wiki](https://github.com/FoxelSA/libfastcal/wiki).
+A detailed documentation can be generated through doxygen. A more general documentation can be consulted on the <a href="https://github.com/FoxelSA/libfastcal/wiki">wiki</a>.
 </p>
 
 ### Copyright

@@ -2,7 +2,7 @@
 
 ### Beta 1.3
 
-- `Added` : Camera equirectangular resolution key access method
+- `Added` : Camera equirectangular resolution key access methods
 
 ### Release 1.2 (February 11, 2015)
 

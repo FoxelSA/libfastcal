@@ -1,12 +1,15 @@
+
 ## libfastcal<br/>Fast calibration data access
 
+<p align="justify">
 The libfastcal library provides camera calibration data access in the fastest and simplest possible way. The library expects a standardized directories structure and a key/value-files for each camera that contains the calibration data values that library clients want to access.
-
+</p>
 
 ### Documentation
 
+<p align="justify">
 A detailed documentation can be generated through doxygen. A more general documentation can be consulted on the [wiki](https://github.com/FoxelSA/libfastcal/wiki).
-
+</p>
 
 ### Copyright
 

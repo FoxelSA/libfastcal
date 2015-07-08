@@ -16,8 +16,8 @@ ENDIF(NOT CMAKE_BUILD_TYPE AND NOT MSVC)
 # Compilation configuration
 # ==============================================================================
 IF (UNIX)
-  SET(CMAKE_C_FLAGS_RELEASE "-O3")
-  SET(CMAKE_CXX_FLAGS_RELEASE "-O3")
+  SET(CMAKE_C_FLAGS_RELEASE "-Wall -funsigned-char -O3")
+  SET(CMAKE_CXX_FLAGS_RELEASE "-Wall -funsigned-char -O3")
 ENDIF ()
 
 

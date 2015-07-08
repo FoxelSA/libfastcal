@@ -1,6 +1,6 @@
 ## Changelog
 
-### Beta 1.3
+### Release 1.3 (July 8, 2015)
 
 - `Added` : Camera equirectangular resolution key access methods
 
